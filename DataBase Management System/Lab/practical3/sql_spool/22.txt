@@ -1,0 +1,7 @@
+SQL> select length(first_name) from employees where instr(substr(last_name,4,length(last_name)-3),'b')>0;
+
+LENGTH(FIRST_NAME)                                                                                                                                                                                                                                                                                          
+------------------                                                                                                                                                                                                                                                                                          
+                 5                                                                                                                                                                                                                                                                                          
+
+SQL> spool  off;

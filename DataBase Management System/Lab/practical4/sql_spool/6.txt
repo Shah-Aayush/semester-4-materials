@@ -1,0 +1,12 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select first_name from employees where instr(first_name,'ll')>0
+SQL> /
+
+FIRST_NAME                                                                                                                                                                                                                                                                                                  
+--------------------                                                                                                                                                                                                                                                                                        
+Valli                                                                                                                                                                                                                                                                                                       
+William                                                                                                                                                                                                                                                                                                     
+
+SQL> spool off;

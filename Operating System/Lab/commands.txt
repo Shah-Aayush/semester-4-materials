@@ -1,0 +1,2 @@
+ctrl + p : close cat file./close ubuntu terminal.
+ctrl + l : see the path of the file/current dir in file manager.

@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select department_id,sum(salary) as "max_salary_sum" from employees group by department_id having sum(salary) = (select max(sum(salary)) from employees group by department_id)
+SQL> /
+
+DEPARTMENT_ID max_salary_sum                                                                                                                                                                                                                                                                                
+------------- --------------                                                                                                                                                                                                                                                                                
+           90          58000                                                                                                                                                                                                                                                                                
+
+SQL> spool off;

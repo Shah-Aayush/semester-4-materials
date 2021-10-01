@@ -1,0 +1,13 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select * from employees where hire_date >= TO_DATE(
+  2* '2014-07-01', 'YYYY-MM-DD') order by job_id ASC
+SQL> /
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                 EMAIL                     PHONE_NUMBER         HIRE_DAT JOB_ID                                       SALARY COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                                                                              
+----------- -------------------- ------------------------- ------------------------- -------------------- -------- ---------------------------------------- ---------- -------------- ---------- -------------                                                                                              
+        103 Alexander            Hunold                    AHUNOLD                   590.423.4567         20-05-16 IT PROG                                        9000                       102            60                                                                                              
+        102 Lex                  De Haan                   LDEHAAN                   123.515.4569         19-06-17 VICE PRESIDENT                                17000                       100            90                                                                                              
+
+SQL> spool off;

@@ -1,0 +1,95 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	height: 100vh;		/*Relative to 100% of the height of the viewport(here Viewport = the browser window size.)**/
+	width: 100%;
+	background-image: url('./images/background.png');
+	background-color: #ddf1fe; /*uses this color if image is unavailable*/
+	background-position: center;
+	background-size: cover;	/*Resizes the background image to cover the entire container*/
+	background-repeat: no-repeat; 
+	padding-left: 5%;
+	padding-right: 5%;
+	box-sizing: border-box; /*padding and border are included in the width and height*/
+	position: relative;/*positioned relative to its normal position.*/
+/*	cursor: wait;*/
+}
+.navbar{
+	width: 100%;
+	height: 15vh;
+	margin: auto;	/*create space around elements, outside of any defined borders. || defining it as auto : the browser calculates the margin. */
+	align-items: center; /*Items will be positioned at the center of the container*/
+	display: flex;	/*Displays an element as a block-level flex container	*/
+}
+
+/*This css is covered in inline*/
+/*.logo{*/
+/*	width: 160px;*/
+/*	cursor: wait;	cursor shows that program is busy [here just for example use of cursor property]*/
+/*}*/
+
+.cart{
+	width: 60px;
+}
+nav{
+	flex: 1;	/*flex property is a shorthand property for the flex-grow(how much a flex item will grow relative to the rest of the flex items), flex-shrink(how much a flex item will shrink relative to the rest of the flex items), and flex-basis(specifies the initial length of a flex item) properties.*/
+	padding-left: 60px;
+}
+nav ul li a{
+	text-decoration: none;
+	color: #333;
+}
+.content h1{
+	font-size: 60px;
+	font-weight: bold;
+	margin-top: 24px;
+	margin-bottom: 15px;
+	color: #232d60;
+	text-transform: uppercase;
+}
+.content p{
+	font-size: 20px;
+	color: #6a7199;
+}
+.content{
+	margin-left: 10%;
+	margin-top: 10%;
+}
+.content .btn{
+	display: inline-block;
+	background: linear-gradient(45deg, #87adfe, #ff77cd);
+	border-radius: 6px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	text-decoration: none;
+	color: #fff;
+	box-shadow: 3px 8px 22px rgba(94,28,68,0.15);
+}
+.arrow-icons{
+	margin-top: 40px;
+}
+.arrow-icons img{
+	width: 40px;
+	margin-right: 25px;
+}
+.feature-img{
+	height: 130%;
+	left: 50%;
+	position: absolute;	/*positioned relative to the nearest positioned ancestor*/
+	bottom: 0;	/*Sets the bottom edge position*/
+	right: 160px;	/*Sets the right edge position*/
+}
+.social-links{
+	transform: rotate(-90deg);	/*performs rotation anticlockwise*/
+	position: absolute;
+	left: -80px;
+	bottom: 180px;
+}
+.social-links a{
+	text-decoration: none;
+	color: #6a7199;
+	padding-right: 20px;
+	font-size: 14px ;
+}

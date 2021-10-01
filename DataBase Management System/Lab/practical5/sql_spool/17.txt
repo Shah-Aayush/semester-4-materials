@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select employee_id,first_name as name,hire_date from employees where extract(year from hire_date) = '2005'
+SQL> /
+
+EMPLOYEE_ID NAME                 HIRE_DAT                                                                                                                                                                                                                                                                   
+----------- -------------------- --------                                                                                                                                                                                                                                                                   
+        206 William              06-07-05                                                                                                                                                                                                                                                                   
+
+SQL> spool off;

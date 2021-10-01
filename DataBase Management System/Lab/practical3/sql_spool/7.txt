@@ -1,0 +1,12 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select last_name from employees where length(last_name) > 8
+SQL> /
+
+LAST_NAME                                                                                                                                                                                                                                                                                                   
+-------------------------                                                                                                                                                                                                                                                                                   
+Pataballa                                                                                                                                                                                                                                                                                                   
+Colmenares                                                                                                                                                                                                                                                                                                  
+
+SQL> spool off;

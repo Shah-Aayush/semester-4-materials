@@ -1,0 +1,12 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select s1.salesmanno,s2.orderno,s2.productrate*s2.qtyordered as ORDER_AMOUNT from sales_order s1 join sales_order_details s2 on s1.orderno = s2.orderno where s2.productrate*qtyordered > 10000
+SQL> /
+
+SALESM ORDERN ORDER_AMOUNT                                                                                                                                                                                                                                                                                                                                                                                      
+------ ------ ------------                                                                                                                                                                                                                                                                                                                                                                                      
+S01    O19001        10500                                                                                                                                                                                                                                                                                                                                                                                      
+S01    O19001        16800                                                                                                                                                                                                                                                                                                                                                                                      
+
+SQL> spool off;

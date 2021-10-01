@@ -1,0 +1,27 @@
+<head>
+    <title>prac7</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="prac7.js"></script>
+</head>
+<body ng-app="mainApp" ng-controller = "personalDetails">
+    <div class="container" id="input">
+        <h1>Personal Details:</h1>
+        <h2 class="text">First name:</h2>
+        <input type="text" ng-model = "student.firstName">
+        <h2 class="text">Last name:</h2>
+        <input type="text" ng-model = "student.lastName">
+        <h2 class="text">Mobile number:</h2>
+        <input type="text" ng-model = "student.mobNum">
+        <h2 class="text">Email ID:</h2>
+        <input type="text" ng-model = "student.emailID">
+        <h2 class="text">Educational Qualification:</h2>
+        <input type="text" ng-model = "student.educationalQualification">
+        <button>Get my personal intro now!</button>
+    </div>
+    <div class="container" id="output">
+        <h2>Here is your personalised introduction:</h2>
+        <p>Good morning. My name is <b>{{student.firstName}} {{student.lastName}}</b>. I completed my <b>{{student.educationalQualification}}</b>. I got hired by a renowned IT company through the campus placement. I have been working with the company for almost a decade now. I have learned the ins and outs of IT operations in my journey from a fresher to a manager. My qualifications and work experience make me a suitable candidate for the profile. I am looking to join your organization to explore new dimensions and for the further development of my skills. You can reach me anytime at <b>{{student.mobNum}}</b>. Feel free to drop a mail at <b>{{student.emailID}}</b>.
+        </p>                
+    </div>
+</body>
+</html>

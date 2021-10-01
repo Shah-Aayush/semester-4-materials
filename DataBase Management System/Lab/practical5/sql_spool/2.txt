@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select department_id,count(employee_id) as "number_of_emp" from employees group by department_id having count(employee_id) = (select max(count(employee_id)) from employees group by department_id)
+SQL> /
+
+DEPARTMENT_ID number_of_emp                                                                                                                                                                                                                                                                                 
+------------- -------------                                                                                                                                                                                                                                                                                 
+           60             4                                                                                                                                                                                                                                                                                 
+
+SQL> spool off;

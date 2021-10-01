@@ -1,0 +1,7 @@
+ID   NAME            WAGES
+------------------------------
+1001 Vinay_kumar     10000
+1002 Rohit_sen       NA
+1003 Vinita_sharma   0
+1004 Aayush_shah     13200
+1005 Random_name     246

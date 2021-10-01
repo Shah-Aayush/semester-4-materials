@@ -1,0 +1,121 @@
+Memory hierarchy
+
+Register							bytes			| Internal memory
+Cache memory	DRAM(dynamic)		kb/mb			| Internal memory
+Main memory		RAM(static ram)		gb				| Primary memory
+USB / Flash memory					gb				| Secondary storage
+Magnetic disk/ hard disk			tb				| Secondary storage
+Magnetic tapes/ tape drives			pb/eb			| Tertiary storage
+
+Size 		: Increase from top to bottom
+Access time : Decrease from top to bottom
+Frequency of usage : Decrease from top to bottom
+
+
+2-Level memory organization 
+	Independent organization : Parallel Joined		[ignore search time]
+		AT(L1) < AT(L2)				[Access Time of ram-L2 is greater than of cache-L1]
+		SIZE L1<L2
+		Tavg = H1T1 + (1-H1)T2		[Tavg is access time]
+		
+			/ L1
+		CPU
+			\ L2
+			
+	heirarchical organization : Series Joined		[not to ignore search time]
+		Tavg = H1T1 + (1-H1)(T1+T2)		[Tavg is access time]
+	
+		CPU -> L1 -> L2
+
+3-Level memory organization
+	Independent organization : parallel joined
+		Tavg = H1T1 + (1-H1)(H2)T2 + (1-H1)(1-H2)T3
+			/ L1
+		CPU - L2
+			\ L3
+			
+	Heirarchical organization : series joined
+		Tavg = H1T1 + (1-H1)(H2)(T1+T2) + (1-H1)(1-H2)(T1+T2+T3)
+		CPU -> L1 -> L2 -> L3
+		
+	->Hit ratio of last unit is 100% so probability is H3=1 so we do not have to include it in formula.
+	
+	->If anything is not mention that which method we should use like heirarchical or independent then always go for INDEPENDENT.
+	
+	->CPU works in MIPS 10^6 or in GIPS 10^9 (instructions per second)
+	->MEMORY is a word addressable.
+	
+	
+> Main Memory :
+	-> total number of blocks = total number of words/ words per block
+	-> blocks and words are indexed from zero.
+	
+	>> PHYSICAL ADDRESS : 
+		total bits in physical address = number of bits require to represent total words = log2 (total words)
+				>>> physical address = block number + block offset(size : number of words per one block)
+					
+> Cache Memory :
+	-> Cache contains lines instead of blocks.
+	-> total number of lines = total number of words/ words per line
+	>> PHYSICAL ADDRESS : 
+		total bits in physical address = same as main memory
+				>>> block offset = same as main memory
+				>>> block number = Tag(represent which block is present) + line number
+				>>>> TAG + LINE NO. + BLOCK OFFSET
+				
+-> If a block for which CPU is looking is already present in the cache then it is called CACHE HIT. otherwise CACHE MISS.
+
+
+	DIRECT MAPPING : 
+		k mod n
+		[ block number MOD number of lines ]
+	
+	line size = block size
+	in cache = tag + line no + block offset(block size=line size)
+			 = tag + cache size / block size + block size		[all are no. of bits require to represent them.]
+	-> Cache indexing is same as line no.
+	
+	PROS : 
+		simple
+		searching is easy [comparision is less]
+	CONS : 
+		conflict miss	[space is available but still getting miss]
+	
+	FULLY ASSOCIATIVE :
+		number of hit will increase as compare to direct mapping.
+		Any block can enter into any line unlike direct mapping.
+		
+		Main memory : block no. + block size
+		fully associatve : tag (=block no.) + block size 	{as block can come in any line unlike direct mapping, we don't need line no. field now.}
+		
+		CONS : 
+			-> Tag bit is increased.
+			-> Comparision is increased. {In direct mapping, we just have to see in one line but here we have to see in all lines as any block can come in any lines.}
+			
+	K-WAY SET ASSOCIATIVE : 
+		combination of set associative + direct mapping.
+		number of set = number of lines/k
+		
+		k mod n = 
+		number of block MOD number of sets (in direct mapping it is number of lines)
+		In this only set number is fixed condition. but the block can come in any line of that specific set.
+		
+		physical address in main memory : block no. + block offset
+		physical address in cache memory : tag + set no. + block offset		{in direct mapping set no. was line no.}
+
+Locality of reference :
+	Spatial locality	{related to space}
+		-> if a word is accessed now the the word adjacent to it (close proximity) will be accessed next.
+		-> keeping more words in a block affects spatial locality (block size).	=> HIT WILL INCREASE.
+	Temporal locality 	{related to time}
+		-> if a word is referenced now then the same word will be referenced again in future.
+		-> LRU is used in temporal locality.
+		
+CACHE REPLACEMENT ALGO : 
+	we don't need to replace cache here. We have to replace the data in cache.
+	we want to reduce miss penatly and increase hit rate.
+	FIFO	- First In First Out
+	LRU		- Least Recently Used
+	MRU		- Most Recently Used
+	RANDOM	- Random
+	

@@ -1,0 +1,7 @@
+Interrupt is a hardware mechanism in which, the device notices the CPU that it requires its attention
+The device number may be used as an index into part of memory to find the address of the interrupt handler for this device. This part of memory is called the interrupt vector
+interrupt handler (part of the driver for the interrupting device)
+ISA (Industry Standard Architecture)
+PCI (Peripheral Component Interconnect)
+SCSI (Small Computer System Interface)
+USB (Universal Serial Bus)

@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from employees where (salary) = (select min(salary) from employees)
+SQL> /
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                 EMAIL                     PHONE_NUMBER         HIRE_DAT JOB_ID                                       SALARY COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                                                                              
+----------- -------------------- ------------------------- ------------------------- -------------------- -------- ---------------------------------------- ---------- -------------- ---------- -------------                                                                                              
+        119 Karen                Colmenares                KCOLMENA                  515.127.4566         06-07-87 CLERK                                          2500                       114            30                                                                                              
+
+SQL> spool off;

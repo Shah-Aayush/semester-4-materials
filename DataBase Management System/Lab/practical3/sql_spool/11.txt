@@ -1,0 +1,23 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select first_name,last_name,hire_date, months_between(sysdate,hire_date),floor(months_between(sysdate,hire_date)/12)
+  2* from employees
+SQL> /
+
+FIRST_NAME           LAST_NAME                 HIRE_DAT MONTHS_BETWEEN(SYSDATE,HIRE_DATE) FLOOR(MONTHS_BETWEEN(SYSDATE,HIRE_DATE)/12)                                                                                                                                                                       
+-------------------- ------------------------- -------- --------------------------------- -------------------------------------------                                                                                                                                                                       
+Steven               King                      17-06-00                        247.767331                                          20                                                                                                                                                                       
+Neena                Kochhar                   18-06-12                        103.735073                                           8                                                                                                                                                                       
+Lex                  De Haan                   19-06-17                        43.7028147                                           3                                                                                                                                                                       
+Alexander            Hunold                    20-05-16                        56.6705567                                           4                                                                                                                                                                       
+Bruce                Ernst                     20-05-14                        80.6705567                                           6                                                                                                                                                                       
+David                Austin                    17-09-01                        232.767331                                          19                                                                                                                                                                       
+Valli                Pataballa                 20-09-01                        232.670557                                          19                                                                                                                                                                       
+Den                  Raphaely                  01-09-90                         365.28346                                          30                                                                                                                                                                       
+Karen                Colmenares                06-07-87                         403.12217                                          33                                                                                                                                                                       
+William              Gietz                     06-07-05                         187.12217                                          15                                                                                                                                                                       
+
+10 rows selected.
+
+SQL> spool off;

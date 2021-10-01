@@ -1,0 +1,18 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select first_name,salary from employees where to_char(salary) like '___0'
+SQL> /
+
+FIRST_NAME               SALARY                                                                                                                                                                                                                                                                             
+-------------------- ----------                                                                                                                                                                                                                                                                             
+Alexander                  9000                                                                                                                                                                                                                                                                             
+Bruce                      6000                                                                                                                                                                                                                                                                             
+David                      4800                                                                                                                                                                                                                                                                             
+Valli                      4800                                                                                                                                                                                                                                                                             
+Karen                      2500                                                                                                                                                                                                                                                                             
+William                    8300                                                                                                                                                                                                                                                                             
+
+6 rows selected.
+
+SQL> spool off;

@@ -1,0 +1,60 @@
+CREATE TABLE branch (
+	branch_id int NOT NULL,
+	branch_name varchar(20) NOT NULL, 
+	PRIMARY KEY (branch_id)
+);
+
+CREATE TABLE student( 
+	student_id int NOT NULL,
+    branch_id int NOT NULL,
+	roll_no varchar(10) NOT NULL,
+	email varchar(50) NOT NULL,
+	password varchar(20) NOT NULL,
+	PRIMARY KEY(student_id),
+	FOREIGN KEY (branch_id) REFERENCES branch(branch_id) 
+);
+
+CREATE TABLE subject (
+	subject_code varchar(10) NOT NULL,
+	branch_id int NOT NULL, 
+    subject_name varchar(20) NOT NULL, 
+	subject_credit int NOT NULL,
+	PRIMARY KEY (subject_code),
+	FOREIGN KEY (branch_id) REFERENCES branch(branch_id)
+);
+
+CREATE TABLE exam( 
+	exam_id int NOT NULL,
+	exam_name varchar(20) NOT NULL, 
+	exam_duration time,
+	exam_date varchar(10), 
+	total_questions int NOT NULL, 
+	total_marks int NOT NULL, 
+	branch_id int NOT NULL, 
+	subject_code varchar(10) NOT NULL,
+	PRIMARY KEY (exam_id),
+	FOREIGN KEY (subject_code) REFERENCES subject(subject_code),
+	FOREIGN KEY (branch_id) REFERENCES branch(branch_id)
+);
+
+CREATE TABLE attendance (
+	attendance_id int NOT NULL,
+	student_id int NOT NULL,
+	exam_id int NOT NULL,
+	login_time time,
+	logout_time time,
+	PRIMARY KEY (attendance_id),
+	FOREIGN KEY (student_id) REFERENCES student(student_id), 
+	FOREIGN KEY (exam_id) REFERENCES exam(exam_id)
+);
+
+CREATE TABLE result (
+	result_id int NOT NULL,
+	student_id int NOT NULL,
+	exam_id int NOT NULL,
+	marks_obtained int NOT NULL,
+	result varchar(4) NOT NULL,
+	PRIMARY KEY (result_id),
+	FOREIGN KEY (exam_id) REFERENCES exam(exam_id),
+	FOREIGN KEY (student_id) REFERENCES student(student_id)
+);

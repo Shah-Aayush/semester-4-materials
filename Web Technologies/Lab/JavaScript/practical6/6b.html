@@ -1,0 +1,94 @@
+<!--Create a JavaScript that merges two arrays without duplicating elements.-->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<html>
+	<head>
+		<style>
+			body {
+				font-family: 'Roboto', sans-serif;
+				background-color: #def4f3;
+			}
+			.mainheader {
+				text-align: center;
+				color: #272343;
+			}
+			.mainbody {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+			.container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: 2px solid black;
+				border-radius: 50px;
+				padding: 20px;
+				background-color: #bae8e8;
+				color: white;
+				font-size: 20px;
+			}
+			.stylingbutton {
+				cursor: pointer;
+				background-color: #ffd803;
+				color: #272343;
+				border-radius: 50px;
+				font-size: 15px;
+			}
+			.namestyle {
+				cursor: pointer;
+				margin-right: 5px;
+				background-color: ffd803;
+				border: 2px solid black;
+				color: #272343;
+				border-radius: 50px;
+				padding:2px;
+			}
+			.inputstyle {
+				border-radius: 50px;
+				font-size: 15px;
+			}
+		</style>
+		<script>
+			//        JavaScript function for merging 2 arrays and removing duplicates :
+			function mergeWithoutDuplicates(){
+				var arr1 = (document.getElementById("arr1").value).split(",")
+				var arr2 = (document.getElementById("arr2").value).split(",")
+				
+				var arr3 = arr1.concat(arr2);
+				for(var i=0; i<arr3.length; ++i) { 
+					for(var j=i+1; j<arr3.length; ++j) { 
+						if(arr3[i] === arr3[j]) {
+							arr3.splice(j, 1);  //The splice() method adds/removes items to/from an array, and returns the removed item(s). ||  at  position 'j' removes 1 item.
+						}
+					}
+				}
+				document.getElementById("result_arr").value = arr3;  
+			}
+		</script>
+	</head>
+	<body> 
+		<div class="mainheader">
+			<h2>Create a JavaScript that merges two arrays <br>without duplicating elements.</h2>
+		</div>
+		<div class="mainbody">
+			<div class="container">
+				<div class="namestyle">Enter 1st Array : </div> <input class="inputstyle" id="arr1">
+			</div>
+			<br>
+			<div class="container">
+				<div class="namestyle">Enter 2nd Array : </div> <input class="inputstyle" id="arr2">
+			</div>
+			<br>
+			<br>
+			<div class="container">
+				<div>
+					<button class="stylingbutton" onclick="mergeWithoutDuplicates()">Resultant Array :  </button>
+					<input class="inputstyle" id="result_arr" disabled>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

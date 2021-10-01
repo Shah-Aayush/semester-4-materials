@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from employees where (salary*12) = (select max(salary*12) from employees)
+SQL> /
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                 EMAIL                     PHONE_NUMBER         HIRE_DAT JOB_ID                                       SALARY COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                                                                              
+----------- -------------------- ------------------------- ------------------------- -------------------- -------- ---------------------------------------- ---------- -------------- ---------- -------------                                                                                              
+        100 Steven               King                      SKING                     515.123.4567         17-06-00 PRESIDENT                                     24000                       103            90                                                                                              
+
+SQL> spool off;

@@ -1,0 +1,958 @@
+SQL*Plus: Release 11.2.0.2.0 Production on Tue Feb 9 11:21:15 2021
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+Use "connect username/password@XE" to connect to the database.
+SQL> connect aayush/Niyati34
+Connected.
+SQL> select * from client;
+
+CLIENT NAME		    CITY	       PINCODE STATE
+------ -------------------- --------------- ---------- ---------------
+    BALDUE  TELEPHONE
+---------- ----------
+C01    Ivan Bayross	    Mumbai		400054 Maharashtra
+     15000
+
+C03    Chhaya Patel	    Mumbai	       4000057 Maharashtra
+      5000
+
+C04    Ashni Joshi	    Bangalore		560001 Karnataka
+	 0
+
+
+CLIENT NAME		    CITY	       PINCODE STATE
+------ -------------------- --------------- ---------- ---------------
+    BALDUE  TELEPHONE
+---------- ----------
+C05    Harsh Desai	    Bangalore		400060 Maharashtra
+      2000
+
+C06    Deepak Sharma	    Mangalore		560050 Karnataka
+	 0
+
+
+SQL> /media/sf_DataBase_Management_System/Lab/practical3
+SP2-0734: unknown command beginning "/media/sf_..." - rest of line ignored.
+SQL> @PRAC_3.SQL
+SP2-0310: unable to open file "PRAC_3.SQL"
+SQL> "/media/sf_DataBase_Management_System/Lab/practical3/PRAC_3.SQL
+SP2-0734: unknown command beginning ""/media/sf..." - rest of line ignored.
+SQL> ed
+Wrote file afiedt.buf
+23
+q
+
+  1* select * from client
+SQL> \
+SP2-0042: unknown command "\" - rest of line ignored.
+SQL> "/media/sf_DataBase_Management_System/Lab/practical3/PRAC_3.SQL"
+SP2-0734: unknown command beginning ""/media/sf..." - rest of line ignored.
+SQL> @"/media/sf_DataBase_Management_System/Lab/practical3/PRAC_3.SQL"
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> select  * from employee;
+select	* from employee
+               *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from employees;
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	100 Steven		 King
+SKING			  515.123.4567	       17-06-00
+PRESIDENT				      24000			  103
+	   90
+
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	101 Neena		 Kochhar
+NKOCHHAR		  515.123.4568	       18-06-12
+VICE PRESIDENT				      17000		 0	  100
+	   90
+
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	102 Lex 		 De Haan
+LDEHAAN 		  123.515.4569	       19-06-17
+VICE PRESIDENT				      17000			  100
+	   90
+
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	103 Alexander		 Hunold
+AHUNOLD 		  590.423.4567	       20-05-16
+IT PROG 				       9000			  102
+	   60
+
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	104 Bruce		 Ernst
+BERNST			  590.423.4568	       20-05-14
+FINANCIAL MANAGER			       6000		 0	  103
+	   60
+
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	105 David		 Austin
+DAUSTIN 		  590.423.4569	       17-09-01
+IT PROG 				       4800		 0	  103
+	   60
+
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	106 Valli		 Pataballa
+VPATABAL		  590.423.4560	       20-09-01
+FINANCE ACCOUNTANT			       4800		 0	  103
+	   60
+
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	114 Den 		 Raphaely
+DRAPHEAL		  515.127.4561	       01-09-90
+SALES CLERK				      11000		 0	  100
+	   30
+
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	119 Karen		 Colmenares
+KCOLMENA		  515.127.4566	       06-07-87
+CLERK					       2500			  114
+	   30
+
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME
+----------- -------------------- -------------------------
+EMAIL			  PHONE_NUMBER	       HIRE_DAT
+------------------------- -------------------- --------
+JOB_ID					     SALARY COMMISSION_PCT MANAGER_ID
+---------------------------------------- ---------- -------------- ----------
+DEPARTMENT_ID
+-------------
+	206 William		 Gietz
+WGIETZ			  515.123.8181	       06-07-05
+ACCOUNTANT				       8300			  205
+	  110
+
+
+10 rows selected.
+
+SQL> set linesize 300;
+SQL> select * from employees;
+
+EMPLOYEE_ID FIRST_NAME		 LAST_NAME		   EMAIL		     PHONE_NUMBER	  HIRE_DAT JOB_ID					SALARY COMMISSION_PCT MANAGER_ID DEPARTMENT_ID
+----------- -------------------- ------------------------- ------------------------- -------------------- -------- ---------------------------------------- ---------- -------------- ---------- -------------
+	100 Steven		 King			   SKING		     515.123.4567	  17-06-00 PRESIDENT					 24000			     103	    90
+	101 Neena		 Kochhar		   NKOCHHAR		     515.123.4568	  18-06-12 VICE PRESIDENT				 17000		    0	     100	    90
+	102 Lex 		 De Haan		   LDEHAAN		     123.515.4569	  19-06-17 VICE PRESIDENT				 17000			     100	    90
+	103 Alexander		 Hunold 		   AHUNOLD		     590.423.4567	  20-05-16 IT PROG					  9000			     102	    60
+	104 Bruce		 Ernst			   BERNST		     590.423.4568	  20-05-14 FINANCIAL MANAGER				  6000		    0	     103	    60
+	105 David		 Austin 		   DAUSTIN		     590.423.4569	  17-09-01 IT PROG					  4800		    0	     103	    60
+	106 Valli		 Pataballa		   VPATABAL		     590.423.4560	  20-09-01 FINANCE ACCOUNTANT				  4800		    0	     103	    60
+	114 Den 		 Raphaely		   DRAPHEAL		     515.127.4561	  01-09-90 SALES CLERK					 11000		    0	     100	    30
+	119 Karen		 Colmenares		   KCOLMENA		     515.127.4566	  06-07-87 CLERK					  2500			     114	    30
+	206 William		 Gietz			   WGIETZ		     515.123.8181	  06-07-05 ACCOUNTANT					  8300			     205	   110
+
+10 rows selected.
+
+SQL> select Avg(Department_id) from employees;
+
+AVG(DEPARTMENT_ID)
+------------------
+		68
+
+SQL> select min(Department_id_ from employees;
+select min(Department_id_ from employees
+                          *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> ed
+Wrote file afiedt.buf
+43
+
+  1* select min(Department_id_ from employees
+SQL> ed
+Wrote file afiedt.buf
+43
+q
+\
+?
+q
+
+  1* select min(Department_id) from employees
+SQL> \
+SP2-0042: unknown command "\" - rest of line ignored.
+SQL> /
+
+MIN(DEPARTMENT_ID)
+------------------
+		30
+
+SQL> /
+
+MIN(DEPARTMENT_ID)
+------------------
+		30
+
+SQL> select count(department_id) from employees;
+
+COUNT(DEPARTMENT_ID)
+--------------------
+		  10
+
+SQL> select count(*) from employees;
+
+  COUNT(*)
+----------
+	10
+
+SQL> select max(department_id) from employes;
+select max(department_id) from employes
+                               *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select max(department_id) from employees;
+
+MAX(DEPARTMENT_ID)
+------------------
+	       110
+
+SQL> select sum(department_id) from employeess;
+select sum(department_id) from employeess
+                               *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select sum(department_id) from employees;
+
+SUM(DEPARTMENT_ID)
+------------------
+	       680
+
+SQL> selec abs(-23);
+SP2-0734: unknown command beginning "selec abs(..." - rest of line ignored.
+SQL> select abs(-23);
+select abs(-23)
+              *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select abs(-24.5);
+select abs(-24.5)
+                *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select ABS(-5);
+select ABS(-5)
+             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select ABS("-5");
+select ABS("-5")
+               *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select abs(department_id) from employees;
+
+ABS(DEPARTMENT_ID)
+------------------
+		90
+		90
+		90
+		60
+		60
+		60
+		60
+		30
+		30
+	       110
+
+10 rows selected.
+
+SQL> select power(department_id,2) from employees;
+
+POWER(DEPARTMENT_ID,2)
+----------------------
+		  8100
+		  8100
+		  8100
+		  3600
+		  3600
+		  3600
+		  3600
+		   900
+		   900
+		 12100
+
+10 rows selected.
+
+SQL> select round(department_id,2) from employees;
+
+ROUND(DEPARTMENT_ID,2)
+----------------------
+		    90
+		    90
+		    90
+		    60
+		    60
+		    60
+		    60
+		    30
+		    30
+		   110
+
+10 rows selected.
+
+SQL> select sqrt(department_id) from empolyees;
+select sqrt(department_id) from empolyees
+                                *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select sqrt(department_id) from employees;
+
+SQRT(DEPARTMENT_ID)
+-------------------
+	 9.48683298
+	 9.48683298
+	 9.48683298
+	 7.74596669
+	 7.74596669
+	 7.74596669
+	 7.74596669
+	 5.47722558
+	 5.47722558
+	 10.4880885
+
+10 rows selected.
+
+SQL> select exp(department_id) from employees;
+
+EXP(DEPARTMENT_ID)
+------------------
+	1.2204E+39
+	1.2204E+39
+	1.2204E+39
+	1.1420E+26
+	1.1420E+26
+	1.1420E+26
+	1.1420E+26
+	1.0686E+13
+	1.0686E+13
+	5.9210E+47
+
+10 rows selected.
+
+SQL> select floor(department_id) from employees;
+
+FLOOR(DEPARTMENT_ID)
+--------------------
+		  90
+		  90
+		  90
+		  60
+		  60
+		  60
+		  60
+		  30
+		  30
+		 110
+
+10 rows selected.
+
+SQL> select ceiling(department_id) from employees;
+select ceiling(department_id) from employees
+       *
+ERROR at line 1:
+ORA-00904: "CEILING": invalid identifier
+
+
+SQL> Select ceiling(department_id) from employees;
+Select ceiling(department_id) from employees
+       *
+ERROR at line 1:
+ORA-00904: "CEILING": invalid identifier
+
+
+SQL> select ceil(department_id) from employees;
+
+CEIL(DEPARTMENT_ID)
+-------------------
+		 90
+		 90
+		 90
+		 60
+		 60
+		 60
+		 60
+		 30
+		 30
+		110
+
+10 rows selected.
+
+SQL> select rand()*(10-1);
+select rand()*(10-1)
+                   *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select rand()*(10-1) from employees;
+select rand()*(10-1) from employees
+       *
+ERROR at line 1:
+ORA-00904: "RAND": invalid identifier
+
+
+SQL> select rand(department_id)*(10-1) from employees;
+select rand(department_id)*(10-1) from employees
+       *
+ERROR at line 1:
+ORA-00904: "RAND": invalid identifier
+
+
+SQL> select rand();
+select rand()
+            *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select * from employees order by rand();
+select * from employees order by rand()
+                                 *
+ERROR at line 1:
+ORA-00904: "RAND": invalid identifier
+
+
+SQL> select dbms.random_value(1,100);
+select dbms.random_value(1,100)
+                              *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> ed  
+Wrote file afiedt.buf
+34
+q
+
+  1* select dbms.random_value(1,100) from employees;
+SQL> /
+select dbms.random_value(1,100) from employees;
+                                              *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> select rand() from dual;
+select rand() from dual
+       *
+ERROR at line 1:
+ORA-00904: "RAND": invalid identifier
+
+
+SQL> select dbms.random_value(1,100) from dual;
+select dbms.random_value(1,100) from dual
+       *
+ERROR at line 1:
+ORA-00904: "DBMS"."RANDOM_VALUE": invalid identifier
+
+
+SQL> Select LENGTH( ‘string’ ) from dual;
+Select LENGTH( ‘string’ ) from dual
+               *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> select length("string") from dual;
+select length("string") from dual
+              *
+ERROR at line 1:
+ORA-00904: "string": invalid identifier
+
+
+SQL> select length('Aayush') from dual;
+
+LENGTH('AAYUSH')
+----------------
+	       6
+
+SQL> select concat('Aayush',' Shah') from dual;
+
+CONCAT('AAY
+-----------
+Aayush Shah
+
+SQL> select lower(first_name) from employeesl;
+select lower(first_name) from employeesl
+                              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select lower(first_name) from employees;
+
+LOWER(FIRST_NAME)
+--------------------
+steven
+neena
+lex
+alexander
+bruce
+david
+valli
+den
+karen
+william
+
+10 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+42
+q
+
+  1* select upper(first_name) from employees
+SQL> \
+SP2-0042: unknown command "\" - rest of line ignored.
+SQL> /
+
+UPPER(FIRST_NAME)
+--------------------
+STEVEN
+NEENA
+LEX
+ALEXANDER
+BRUCE
+DAVID
+VALLI
+DEN
+KAREN
+WILLIAM
+
+10 rows selected.
+
+SQL> select init(email) from employees;
+select init(email) from employees
+       *
+ERROR at line 1:
+ORA-00904: "INIT": invalid identifier
+
+
+SQL> ed
+Wrote file afiedt.buf
+36
+q
+
+  1* select initcap(email) from employees
+SQL> /
+
+INITCAP(EMAIL)
+-------------------------
+Sking
+Nkochhar
+Ldehaan
+Ahunold
+Bernst
+Daustin
+Vpatabal
+Drapheal
+Kcolmena
+Wgietz
+
+10 rows selected.
+
+SQL> select substr(email,1,3) from employees;
+
+SUBSTR(EMAIL
+------------
+SKI
+NKO
+LDE
+AHU
+BER
+DAU
+VPA
+DRA
+KCO
+WGI
+
+10 rows selected.
+
+SQL> select instr('Aayush','A') from dual;
+
+INSTR('AAYUSH','A')
+-------------------
+		  1
+
+SQL> select replace('Aayush Shah','a','j') from dual;
+
+REPLACE('AA
+-----------
+Ajyush Shjh
+
+SQL> select to_date('08/12/2000',dd/mm/yy) from dual;
+select to_date('08/12/2000',dd/mm/yy) from dual
+                                  *
+ERROR at line 1:
+ORA-00904: "YY": invalid identifier
+
+
+SQL> ed
+Wrote file afiedt.buf
+50
+q
+
+  1* select to_date('08/12/2000',dd/mm/yyyy) from dual
+SQL> .
+SQL> /
+select to_date('08/12/2000',dd/mm/yyyy) from dual
+                                  *
+ERROR at line 1:
+ORA-00904: "YYYY": invalid identifier
+
+
+SQL> ed
+Wrote file afiedt.buf
+52
+q
+
+  1* select to_date('08/12/2000','dd mon yyyy') from dual
+SQL> /
+select to_date('08/12/2000','dd mon yyyy') from dual
+               *
+ERROR at line 1:
+ORA-01843: not a valid month
+
+
+SQL> ed  
+Wrote file afiedt.buf
+55
+q
+
+  1* select to_date('08/12/2000','dd/mm/yyyy') from dual
+SQL> /
+
+TO_DATE(
+--------
+08-12-00
+
+SQL> select to_char(sysdate,'dd/mm/yyyy') from dual;
+
+TO_CHAR(SY
+----------
+09/02/2021
+
+SQL> select add_months('08/12/2000',1) from dual;
+
+ADD_MONT
+--------
+08-01-01
+
+SQL>   
+
+SQL> select last_day(sysdate) from dual;
+
+LAST_DAY
+--------
+28-02-21
+
+SQL> select next_day(sysdate) from dual;
+select next_day(sysdate) from dual
+				*
+ERROR at line 1:
+ORA-00909: invalid number of arguments
+
+
+SQL> ed
+Wrote file afiedt.buf
+37
+q
+
+	1* select next_day(sysdate,1) from dual
+SQL> /
+
+NEXT_DAY
+--------
+14-02-21
+
+SQL> select to_date(sysdate,'dd/mm/yyyy');
+select to_date(sysdate,'dd/mm/yyyy')
+																		*
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> ed
+Wrote file afiedt.buf
+39
+q
+
+	1* select to_date(sysdate,'dd/mm/yyyy') from dual;
+SQL> /
+select to_date(sysdate,'dd/mm/yyyy') from dual;
+																							*
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> select next_day('08/12/2000',1) from  dual;
+
+NEXT_DAY
+--------
+10-12-00
+
+SQL> ed
+Wrote file afiedt.buf
+45
+q
+
+	1* select next_day('08/12/2000',0) from  dual
+SQL> /
+select next_day('08/12/2000',0) from  dual
+															*
+ERROR at line 1:
+ORA-01846: not a valid day of the week
+
+
+SQL> ed
+Wrote file afiedt.buf
+45
+q
+
+	1* select next_day('08/12/2000',2) from  dual
+SQL> /
+
+NEXT_DAY
+--------
+11-12-00
+
+SQL> ed
+Wrote file afiedt.buf
+45
+q
+
+	1* select next_day('08/12/2000',3) from  dual
+SQL> /
+
+NEXT_DAY
+--------
+12-12-00
+
+SQL> sysdate + value(5);
+SP2-0734: unknown command beginning "sysdate + ..." - rest of line ignored.
+SQL> select sysdate + value(5) from dual;
+select sysdate + value(5) from dual
+												*
+ERROR at line 1:
+ORA-01747: invalid user.table.column, table.column, or column specification
+
+
+SQL> select  
+	2  '08/12/2000'
+	3  +
+	4  value(5)
+	5  ;
+value(5)
+			*
+ERROR at line 4:
+ORA-01747: invalid user.table.column, table.column, or column specification
+
+
+SQL> ed
+Wrote file afiedt.buf
+34
+q
+
+	1  select
+	2  '08/12/2000'
+	3  +
+	4  value(5)
+	5* from dual;
+	6  /
+value(5)
+			*
+ERROR at line 4:
+ORA-01747: invalid user.table.column, table.column, or column specification
+
+
+SQL> select dateadd(day,5,sysdate);
+select dateadd(day,5,sysdate)
+														*
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> ed
+Wrote file afiedt.buf
+32
+q
+
+	1* select dateadd(day,5,sysdate) from dual;
+SQL> /
+select dateadd(day,5,sysdate) from dual;
+																				*
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> dateadd(day,5,sysdate);
+SP2-0734: unknown command beginning "dateadd(da..." - rest of line ignored.
+SQL> select dateadd(day,5,'08/12/2000') from dual;
+select dateadd(day,5,'08/12/2000') from dual
+				*
+ERROR at line 1:
+ORA-00904: "DATEADD": invalid identifier
+
+
+SQL> ed
+Wrote file afiedt.buf
+47
+q\/
+?
+q
+
+	1* select date_add(day,5,'08/12/2000') from dual
+SQL> /
+select date_add(day,5,'08/12/2000') from dual
+				*
+ERROR at line 1:
+ORA-00904: "DATE_ADD": invalid identifier
+
+
+SQL> select (sysdate+5) from dual;
+
+(SYSDATE
+--------
+14-02-21
+
+SQL> select current_timestamp from dual;
+
+CURRENT_TIMESTAMP
+---------------------------------------------------------------------------
+09-02-21 12:19:36.601855 PM +05:30
+
+SQL> select extract(day from sysdate) from dual;
+
+EXTRACT(DAYFROMSYSDATE)
+-----------------------
+					9
+					
+SQL> 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from Dr Purnima Gandhi to Everyone:    11:12  AMGood morning studentsfrom 19BCE232 SHAIL HARSHIL SHAH to Everyone:    11:14  AMlast lab we were doing practical 2from Dr Purnima Gandhi to Everyone:    11:19  AMopen oracle command promptfrom Dr Purnima Gandhi to Everyone:    11:19  AMconnect system/systemfrom Dr Purnima Gandhi to Everyone:    11:19  AMsql> @prac3.sqlfrom Dr Purnima Gandhi to Everyone:    11:20  AMsql> @ "D:\prac3.sql'from Dr Purnima Gandhi to Everyone:    11:22  AMit will generate employees table with 10 rowsfrom Dr Purnima Gandhi to Everyone:    11:22  AMselect * from employees;from 19BCE239 SAURIN ANILKUMAR PRAJAPATI to Everyone:    11:24  AMYes Ma'amfrom Dr Purnima Gandhi to Everyone:    11:37  AMsubstrfrom Dr Purnima Gandhi to Everyone:    11:48  AMselect first_name || ' ' || las_name as name from employees;from Dr Purnima Gandhi to Everyone:    11:49  AMas concat dont take more than 2 argufrom Dr Purnima Gandhi to Everyone:    12:25  PMsalary+salary*0.12from Dr Purnima Gandhi to Everyone:    12:27  PMround , ceillingfrom Dr Purnima Gandhi to Everyone:    12:41  PMselect hire_date+10 from employees;from Dr Purnima Gandhi to Everyone:    12:53  PMselect extract(month from hire_date) from emp;from Dr Purnima Gandhi to Everyone:    12:53  PMsimilarly you can use day and year function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

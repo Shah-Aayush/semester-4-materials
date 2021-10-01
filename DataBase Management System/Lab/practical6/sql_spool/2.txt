@@ -1,0 +1,10 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  ALTER TABLE salesman1
+  2* MODIFY remarks varchar2(60) NOT NULL
+SQL> /
+
+Table altered.
+
+SQL> spool off;

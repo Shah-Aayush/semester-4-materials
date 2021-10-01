@@ -1,0 +1,1 @@
+How to edit file using command such that every lines except line 1 will get deleted

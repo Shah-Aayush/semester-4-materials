@@ -1,0 +1,10 @@
+SQL> ed
+Wrote file afiedt.buf
+  1* update client set city='Bangalore' where name='Harsh Desai'
+SQL> /
+1 row updated.
+SQL> select name,city from client where name='Harsh Desai';
+NAME                 CITY                                                       
+-------------------- ---------------                                            
+Harsh Desai          Bangalore                                                  
+SQL> spool off;

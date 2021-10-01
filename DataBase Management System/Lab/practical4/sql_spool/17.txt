@@ -1,0 +1,22 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select employee_id,first_name,salary,job_id,department_id,
+  2  ROUND((SYSDATE - TO_DATE(hire_date))/365.25, 1) as EXPERIENCE,
+  3  salary * 12 as ANNUAL_SALARY
+  4* from employees where department_id in (60,90)
+SQL> /
+
+EMPLOYEE_ID FIRST_NAME               SALARY JOB_ID                                   DEPARTMENT_ID EXPERIENCE ANNUAL_SALARY                                                                                                                                                                                 
+----------- -------------------- ---------- ---------------------------------------- ------------- ---------- -------------                                                                                                                                                                                 
+        100 Steven                    24000 PRESIDENT                                           90       20.7        288000                                                                                                                                                                                 
+        101 Neena                     17000 VICE PRESIDENT                                      90        8.7        204000                                                                                                                                                                                 
+        102 Lex                       17000 VICE PRESIDENT                                      90        3.7        204000                                                                                                                                                                                 
+        103 Alexander                  9000 IT PROG                                             60        4.8        108000                                                                                                                                                                                 
+        104 Bruce                      6000 FINANCIAL MANAGER                                   60        6.8         72000                                                                                                                                                                                 
+        105 David                      4800 IT PROG                                             60       19.4         57600                                                                                                                                                                                 
+        106 Valli                      4800 FINANCE ACCOUNTANT                                  60       19.4         57600                                                                                                                                                                                 
+
+7 rows selected.
+
+SQL> spool off;

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<!--Design a student registration form using AngularJS and apply number, uppercase, and lowercase filters to the appropriate fields.-->
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="./6c_style.css">
+	<script src="./6c_script.js">//JAVASCRIPT for form validation :</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="mainApp" ng-controller="detailsOfStudent" bgcolor=#cadefc>
+	<h1 style="white-space: nowrap;" align="center">
+		<font color="#383e56">STUDENT REGISTRATION FORM</font>
+	</h1>
+	<br>
+	<div id="container">
+
+		 <div id="leftThing">		<!-- INPUT -->
+			<form id="registrationForm" method="post" onsubmit="return validateForm()">
+
+				<label> First name : &nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="firstname" size="15" placeholder="Aayush" maxlength="20" id="first_name" ng-model="student.first_name"/> <br> <br>
+				<label> Middle name : </label>
+				<input type="text" name="middlename" size="15" placeholder="Umeshbhai" id="middle_name" /> <br> <br>
+				<label> Last name : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="lastname" size="15" placeholder="Shah" id="last_name" /> <br> <br>
+				<label> Date of Birth : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="date" name="lastname" size="15" /> <br> <br>
+		
+				<label>
+					Course : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</label>
+				<select>
+					<option selected disabled>Select course</option>
+					<option value="Course">Course</option>
+					<option value="BCA">BCA</option>
+					<option value="BBA">BBA</option>
+					<option value="B.Tech">B.Tech</option>
+					<option value="MBA">MBA</option>
+					<option value="MCA">MCA</option>
+					<option value="M.Tech">M.Tech</option>
+				</select>
+		
+				<br>
+		
+				<br>
+				<label>
+					Gender :
+				</label>
+				<input type="radio" name="gender" value="gender-male" /> Male
+				<input type="radio" name="gender" value="gender-female" /> Female
+				<br>
+		
+				<br>
+				<label>
+					Hobby :
+				</label>
+				<input type="checkbox" name="Hobby" value="H1" checked>Readinig
+				<input type="checkbox" name="Hobby" value="H2">Dancing
+				<input type="checkbox" name="Hobby" value="H3">Singing
+				<br>
+				<br>
+		
+				<label>Phone number : </label>
+				<!--			<input type="text" name="country code"  value="91" size="2" style="width: 40px;"/>   -->
+				<input type="text" name="phone" size="10" maxlength="10" placeholder="9898123123" /> <br> <br>
+				Address :
+				<br>
+				<textarea cols="40" rows="5" value="address" placeholder="Enter your address here"></textarea>
+				<br> <br>
+				<label>Email: <label><br>
+						<input type="email" id="email" name="email" placeholder="19BCE245@nirmauni.ac.in" /> <br>
+						<br>
+						Password: <br>
+						<input type="Password" name="pass" placeholder="Str0ngP@ss123" id="password"> <br>
+						<br>
+						Re-type password: <br>
+						<input type="Password" name="repass" placeholder="Str0ngP@ss123" id="rePassword"> <br> <br>
+						<pre><input type="Submit" value="Submit" form="registrationForm" class="button"/>&nbsp;<input type="Reset" value="Reset" form="registrationForm" class="button">	</pre>
+			</form>
+		</div>
+
+		<div id="rightThing">		<!-- OUTPUT -->
+			<form id="registrationForm" method="post" onsubmit="return validateForm()">
+				{{student.first_name}}
+				<label> First name : &nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="firstname" size="15" placeholder="Aayush" maxlength="20" id="first_name" ng-model="student.first_name"/> <br> <br>
+				<label> Middle name : </label>
+				<input type="text" name="middlename" size="15" placeholder="Umeshbhai" id="middle_name" /> <br> <br>
+				<label> Last name : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="lastname" size="15" placeholder="Shah" id="last_name" /> <br> <br>
+				<label> Date of Birth : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="date" name="lastname" size="15" /> <br> <br>
+		
+				<label>
+					Course : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</label>
+				<select>
+					<option selected disabled>Select course</option>
+					<option value="Course">Course</option>
+					<option value="BCA">BCA</option>
+					<option value="BBA">BBA</option>
+					<option value="B.Tech">B.Tech</option>
+					<option value="MBA">MBA</option>
+					<option value="MCA">MCA</option>
+					<option value="M.Tech">M.Tech</option>
+				</select>
+		
+				<br>
+		
+				<br>
+				<label>
+					Gender :
+				</label>
+				<input type="radio" name="gender" value="gender-male" /> Male
+				<input type="radio" name="gender" value="gender-female" /> Female
+				<br>
+		
+				<br>
+				<label>
+					Hobby :
+				</label>
+				<input type="checkbox" name="Hobby" value="H1" checked>Readinig
+				<input type="checkbox" name="Hobby" value="H2">Dancing
+				<input type="checkbox" name="Hobby" value="H3">Singing
+				<br>
+				<br>
+		
+				<label>Phone number : </label>
+				<!--			<input type="text" name="country code"  value="91" size="2" style="width: 40px;"/>   -->
+				<input type="text" name="phone" size="10" maxlength="10" placeholder="9898123123" /> <br> <br>
+				Address :
+				<br>
+				<textarea cols="40" rows="5" value="address" placeholder="Enter your address here"></textarea>
+				<br> <br>
+				<label>Email: <label><br>
+						<input type="email" id="email" name="email" placeholder="19BCE245@nirmauni.ac.in" /> <br>
+						<br>
+						Password: <br>
+						<input type="Password" name="pass" placeholder="Str0ngP@ss123" id="password"> <br>
+						<br>
+						Re-type password: <br>
+						<input type="Password" name="repass" placeholder="Str0ngP@ss123" id="rePassword"> <br> <br>
+						<pre><input type="Submit" value="Submit" form="registrationForm" class="button"/>&nbsp;<input type="Reset" value="Reset" form="registrationForm" class="button">	</pre>
+			</form>
+		</div>
+
+	</div>
+	
+
+</body>
+
+</html>

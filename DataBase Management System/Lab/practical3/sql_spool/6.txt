@@ -1,0 +1,24 @@
+SQL> ;
+  1* select concat(concat(first_name,last_name),hire_date) from employees
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select concat(concat(first_name,last_name),hire_date) from employees
+SQL> /
+
+CONCAT(CONCAT(FIRST_NAME,LAST_NAME),HIRE_DATE)                                                                                                                                                                                                                                                              
+-----------------------------------------------------                                                                                                                                                                                                                                                       
+StevenKing17-06-00                                                                                                                                                                                                                                                                                          
+NeenaKochhar18-06-12                                                                                                                                                                                                                                                                                        
+LexDe Haan19-06-17                                                                                                                                                                                                                                                                                          
+AlexanderHunold20-05-16                                                                                                                                                                                                                                                                                     
+BruceErnst20-05-14                                                                                                                                                                                                                                                                                          
+DavidAustin17-09-01                                                                                                                                                                                                                                                                                         
+ValliPataballa20-09-01                                                                                                                                                                                                                                                                                      
+DenRaphaely01-09-90                                                                                                                                                                                                                                                                                         
+KarenColmenares06-07-87                                                                                                                                                                                                                                                                                     
+WilliamGietz06-07-05                                                                                                                                                                                                                                                                                        
+
+10 rows selected.
+
+SQL> spool off;

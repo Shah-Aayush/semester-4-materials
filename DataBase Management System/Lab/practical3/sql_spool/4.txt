@@ -1,0 +1,21 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select lower(first_name),upper(last_name) from employees where employee_id between 80 and 150
+SQL> /
+
+LOWER(FIRST_NAME)    UPPER(LAST_NAME)                                                                                                                                                                                                                                                                       
+-------------------- -------------------------                                                                                                                                                                                                                                                              
+steven               KING                                                                                                                                                                                                                                                                                   
+neena                KOCHHAR                                                                                                                                                                                                                                                                                
+lex                  DE HAAN                                                                                                                                                                                                                                                                                
+alexander            HUNOLD                                                                                                                                                                                                                                                                                 
+bruce                ERNST                                                                                                                                                                                                                                                                                  
+david                AUSTIN                                                                                                                                                                                                                                                                                 
+valli                PATABALLA                                                                                                                                                                                                                                                                              
+den                  RAPHAELY                                                                                                                                                                                                                                                                               
+karen                COLMENARES                                                                                                                                                                                                                                                                             
+
+9 rows selected.
+
+SQL> spool off;

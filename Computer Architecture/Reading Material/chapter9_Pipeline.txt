@@ -1,0 +1,91 @@
+Pipe lining
+
+AIM of pipelining : ClockCycle Per Instruction [CPI] ~ 1
+Number of clock cycle = k + (n-1)
+	where k = number of sagements
+		  n = number of instructions
+	multiply final answer with clock cycle time if clock cycle time tp is given.
+	 
+Speed up = time taken in Non pipeline / time taken in pipeline [PER INSTRUCTION]
+Efficiency/Utilization = used blocks / total blocks 
+	[ used blocks / total number of blocks in space-time or face-time diagram ]
+
+-> Questions : 
+	consider total delay = its own delay + register delay
+	consider max total delay as actual clock cycle
+	
+	A 4-stage pipeline has the stage delays as 150, 120, 160 and 140 nanoseconds respectively. Registers that are used between the stages have a delay of 5 nanoseconds each. Assuming constant clocking rate, the total time taken to process 1000 data items on this pipeline will be
+	max delay = 160+5
+	Total delay = (1 * 4 * 165) + (999 * 1 * 165)
+				= 165.5 ms
+					(First instruction takes 4 clockcycle[cc] + other 999 remaining instructions will be completed on each next cc.)
+	
+				
+	Consider a non-pipelined processor with a clock rate of 2.5 gigahertz and average cycles per instruction of four. The same processor is upgraded to a pipelined processor with five stages; but due to the internal pipeline delay, the clock speed is reduced to 2 gigahertz. Assume that there are no stalls in the pipeline. The speed up achieved in this pipelined processor is __________.
+	
+	Speedup = ExecutionTimeOld / ExecutionTimeNew
+	
+	ExecutionTimeOld = CPIOld * CycleTimeOld
+				[Here CPI is Cycles Per Instruction]
+				= CPIOld * CycleTimeOld
+				= 4 * 1/2.5 Nanoseconds
+				= 1.6 ns
+				
+	Since there are no stalls, CPInew can be assumed 1 on average.
+	ExecutionTimeNew = CPInew * CycleTimenew
+				= 1 * 1/2
+				= 0.5
+				
+	Speedup = 1.6 / 0.5 = 3.2
+
+Hazards : 
+	1. Data Hazards
+		data conflict 
+		
+		
+	2. Structural Hazards
+		resource conflict
+		
+		=> SOLUTION : 
+			Resource duplication
+			Use Resource in Pipelining
+			Use Resource renaming
+			Change ordering of instruction
+			
+	3. Control Hazards
+		instruction conflict	[branch statement]
+		all instruction who change the program counter leads to control hazards [branch instruction]
+		
+		flush out all un-succeessfull instruction in between.
+		put stall as soon as we get to know that the instruction is branch.
+		
+		RAW - Read After Write			(\)
+		I1 : R3 <- R1+R2
+		I2 : R5 <- R3+R4
+		I1[Range] intersection I2[Domain] = R3
+		I1[Range] intersection I2[Domain] != 0 ==> Control hazard will occur RAW
+		
+		WAR - Write After Read			(/)
+		autoincrement / autoincrement
+		I1[Domain] intersection I2[Range] != 0 ==> Control hazard will occur WAR
+	
+		WAW - Write After Write
+		I1[Range] intersection I2[Range] != 0 ===> Control hazard will occur WAW
+		
+		
+CISC vs RISC
+
+Complex instruction set computer		Reduced instruction set computer
+Large number of instruction 			Less number of instruction
+Variable length instruction format		Fixed length instruction format
+Large number of instructing modes 		Few number of instructing modes
+Cost is high							Cost is less
+More powerful							Less powerful
+Serial cycle instruction				Single cycle instruction
+Manipulation directly in memory			Only in register
+Microprogrammed control unit			Hardwired control unit
+Examples : MainFrame, Motorola 6800,	MIPS, ARM, SPARC, FugaRu
+	Intel 8080, MULT 2:2, 3:3				LOAD A, 2:2 
+											LOAD B, 3:3 
+											PROD A,B 
+											STORE 2:2, A

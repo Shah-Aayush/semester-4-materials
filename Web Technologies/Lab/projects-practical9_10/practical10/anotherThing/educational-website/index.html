@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- ico -->
+    <link rel="icon" href="./images/moodle-logo.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Moodle</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./upcomingEvents.js"></script>
+    <script src="./counter.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            const choice = sessionStorage.getItem('Choice');
+            if (choice == '1') {
+                var name = sessionStorage.getItem('Name')[0].toUpperCase() + sessionStorage.getItem('Name').slice(1);
+                const email = sessionStorage.getItem('Email');
+                const password = sessionStorage.getItem('Password');
+                document.getElementById('account_name_content').textContent = name;
+                document.getElementById('logged_in').textContent = 'You are logged in as : ';
+                document.getElementById('logged_in_name').textContent = name + ' | ' + email.split('@')[0];
+                mainName = name;
+            }
+            else if (choice == '2') {
+                const email = sessionStorage.getItem('Email');
+                const password = sessionStorage.getItem('Password');
+                var name = email.split("@")[0][0].toUpperCase() + email.split("@")[0].slice(1);
+                document.getElementById('account_name_content').innerHTML = name;
+                document.getElementById('logged_in').textContent = 'You are logged in as : ';
+                document.getElementById('logged_in_name').textContent = ' ' + email.split('@')[0];
+                mainName = name;
+            }
+            mainChoice = choice;
+        })
+    </script>
+
+    <style>
+        .colortext {
+            color: #c3073f;
+        }
+
+        .colortext2 {
+            color: #c3073f;
+        }
+
+        .removelink {
+            text-decoration: underline;
+            color: white;
+        }
+
+        .removelink2 {
+            text-align: none;
+            color: rgb(49, 49, 255);
+        }
+    </style>
+</head>
+
+<body ng-app="todoApp">
+    <section class="header">
+        <nav>
+            <a href="#" class="logo">
+                <img src="./images/volti1.png">
+            </a>
+            <ul>
+                <li><a class="active" href="#">Home</a></li>
+                <li><a class="" href="#courses">Courses</a></li>
+                <li><a class="" href="#aboutlast">About</a></li>
+                <li><a class="" href="#events">Events</a></li>
+                <li>
+                    <a class="" href="#Account" id="account_name" onclick="logout_option()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill:rgb(255, 255, 255);margin-top: 7px;margin-right: 10px;">
+                            <path
+                                d="M12,2C6.579,2,2,6.579,2,12s4.579,10,10,10s10-4.579,10-10S17.421,2,12,2z M12,7c1.727,0,3,1.272,3,3s-1.273,3-3,3 c-1.726,0-3-1.272-3-3S10.274,7,12,7z M6.894,16.772c0.897-1.32,2.393-2.2,4.106-2.2h2c1.714,0,3.209,0.88,4.106,2.2 C15.828,18.14,14.015,19,12,19S8.172,18.14,6.894,16.772z">
+                            </path>
+                        </svg>
+                        <p id="account_name_content" style="display: inline; color: aqua; margin: 0px; ">Log in</p>
+                    </a>
+                    <script>
+                        console.log("found name : "+ document.getElementById('account_name_content').textContent);
+                        console.log("found name : "+ window.name);
+                        if (document.getElementById('account_name_content').textContent=='Log in') {
+                            console.log('hello script');
+                            document.getElementById('account_name_content').onclick = function () {
+                                location.href = "../registration_form-login_form/index.html";
+                            };
+                        }
+                    </script>
+                </li>
+            </ul>
+
+            <!-- modal popup starts -->
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <p style="text-align: center;color: #fffffe;" class="unblur-content">
+                        <!-- <p id="popup-model-content">Are you sure want to logout ?</p> -->
+                        Are you sure want to logout ?
+                        <br>
+                        <input type="submit" class="account-notnow close" value="Not now" style="margin-right: 30px;" />
+                        <a href="../registration_form-login_form/index.html">
+                            <input type="submit" name="signup" id="signup" class="account-logout" value="Logout" />
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                function logout_option() {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+            <!-- modal popup ends -->
+
+        </nav>
+
+        <div class="header-content">
+            <div class="header-text">
+                <h1><span class="colortext">Moodle</span> - The smarter way to learn and manage resources</h1>
+                <p>
+                    The purpose of this is to make students learn more about the different courses and explore
+                    it and to manage their resources in well maintained way.
+                </p>
+                <a href="" class="header-btn">
+                    Get Started
+                </a>
+            </div>
+            <div class="header-image">
+                <img src="./images/main.png">
+            </div>
+        </div>
+    </section>
+    <div></div>
+    <div id="courses"></div>
+    <section class="subjects">
+        <div class="subject-heading">
+            <h2><span class="colortext2">Your Courses</span></h2>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <font>Computer Architecture</font>
+                <p>
+                    In computer engineering, computer architecture is a set of rules and methods that describe
+                    the functionality, organization, and implementation of computer systems. Some definitions of
+                    architecture define it as describing the capabilities and programming model of a computer
+                    but not a particular implementation.In other definitions computer architecture involves
+                    instruction set architecture design, microarchitecture design, logic design, and
+                    implementation.
+                </p>
+                <a href="./ca.html">View</a>
+            </div>
+            <div class="box">
+                <font>Operating System</font>
+                <p>
+                    An operating system (OS) is system software that manages computer hardware, software
+                    resources, and provides common services for computer programs. Time-sharing operating
+                    systems schedule tasks for efficient use of the system and may also include accounting
+                    software for cost allocation of processor time, mass storage, printing, and other resources.
+                </p>
+                <a href="./os.html">View</a>
+            </div>
+            <div class="box">
+                <font>Database Management System</font>
+                <p>
+                    DBMS software primarily functions as an interface between the end user and the database,
+                    simultaneously managing the data, the database engine, and the database schema in order to
+                    facilitate the organization and manipulation of data.
+                </p>
+                <a href="./dbms.html">View</a>
+            </div>
+            <div class="box">
+                <font>Web Technologies</font>
+                <p>
+                    Web technology refers to the means by which computers communicate with each other using
+                    markup languages and multimedia software packages. This gives us a way to interact with
+                    hosted information, such as websites. Web technology involves the use of Hypertext Markup
+                    Language (HTML) and Cascading Style Sheets (CSS)
+                </p>
+                <a href="./wt.html">View</a>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section class="about" id="aboutlast">
+        <div class="about-content">
+            <div class="about-text">
+                <h1><span class="colortext">Education</span> for All</h1>
+                <div class="about-outer">
+                    <div class="icon">
+                        <img src="./images/expert.png">
+                    </div>
+                    <div class="text">
+                        <h2 style="color: #c3073f;">Learn with expert</h2>
+                        <p style="color: black; font-weight: bold;">
+                            Strive not be a success, but rather to be a value.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-outer" style="padding-bottom: 5px;">
+                    <div class="icon">
+                        <img src="./images/document.png">
+                    </div>
+                    <div class="text">
+                        <h2 style="color: #c3073f;">Earn a certificate</h2>
+                        <p style="color: black; font-weight: bold;">
+                            Anyone who has never made a mistake has never tried anything new.
+                        </p>
+                    </div>
+                </div>
+                <a href="#" class="about-btn">
+                    Let's explore
+                </a>
+            </div>
+            <div class="about-image">
+                <img src="./images/main2_new.png" style="transform: scale(1.5);">
+            </div>
+        </div>
+    </section>
+    <div class="secondheader" id="events" style="border: 0px;">
+
+        <div class="counter-container">
+            <div class="col-md-4 counter-display" style="color: white;">
+                <h4 style="margin-top: -2px;">Students</h4>
+                <span style="font-size: x-large; font-weight: bold;" id="count1" class="display-4"></span>
+            </div>
+            <div class="col-md-4 counter-display" style="color: white;">
+                <h4 style="margin-top: -2px;">Certified Teachers</h4>
+                <span style="font-size: x-large; font-weight: bold;" id="count2" class="display-4"></span>
+            </div>
+            <div class="col-md-4 counter-display" style="color: white;">
+                <h4 style="margin-top: -2px;">Courses</h4>
+                <span style="font-size: x-large; font-weight: bold;" id="count3" class="display-4"></span>
+            </div>
+        </div>
+
+        <div class="subject-heading" style="margin-top: -10px;">
+            <h2><span class="colortext2">Upcoming events</span></h2>
+        </div>
+        <br>
+        <center>
+            <div class="todocontainer">
+                <div ng-controller="TodoListController as todoList">
+                    <span>Events remaining : {{todoList.remaining()}} event pending</span>
+                    <ul class="unstyled">
+                        <li ng-repeat="todo in todoList.todos">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="todo.done">
+                                <span class="done-{{todo.done}}">{{todo.text}}</span>
+                            </label>
+                        </li>
+                    </ul>
+                    <form ng-submit="todoList.addTodo()">
+                        <input class="btn-primary-input" type="text" ng-model="todoList.todoText" size="30"
+                            placeholder="Add New Event">
+                        <input class="btn-primary" type="submit" value="Add">
+                    </form>
+                    <div class="event-completed">
+                        <button type="button" ng-click="todoList.archive()">Clear Completed</button>
+                    </div>
+                </div>
+            </div>
+        </center>
+        <br>
+    </div>
+
+    <footer style="color: white; background-color: #1a1a1d; padding: 20px;">
+        <p style="display: inline-block;color: white;" id="logged_in">You are not logged in.</p><a class="removelink"
+            href="./f1.html" id="logged_in_name"></a>
+        <br>
+        For support contact :<a href="https://nirmauni.ac.in/" style="color: white;">Nirma</a>
+        <br>
+        <a href="#top" style="color: white;">Home</a>
+        <br>
+        <a href="https://download.moodle.org/mobile?version=2019111803.02&lang=en&iosappid=633359593&androidappid=com.moodle.moodlemobile"
+            style="color: white;">Get the App</a>
+    </footer>
+</body>
+
+</html>

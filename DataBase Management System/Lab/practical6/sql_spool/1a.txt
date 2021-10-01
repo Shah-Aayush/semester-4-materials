@@ -1,0 +1,17 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  CREATE TABLE client1(
+  2  clientno varchar2(6) PRIMARY KEY, 
+  3  name varchar2(20) NOT NULL,
+  4  city VARCHAR2(15),
+  5  pincode number(6),
+  6  state varchar2(15),
+  7  baldue number(10,5),
+  8  CHECK(clientno LIKE 'C%')
+  9* )
+SQL> /
+
+Table created.
+
+SQL> spool off;

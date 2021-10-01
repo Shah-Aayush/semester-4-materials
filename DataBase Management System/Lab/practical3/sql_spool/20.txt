@@ -1,0 +1,8 @@
+SQL> select first_name from employees where extract(month from hire_date) = 5;
+
+FIRST_NAME                                                                                                                                                                                                                                                                                                  
+--------------------                                                                                                                                                                                                                                                                                        
+Alexander                                                                                                                                                                                                                                                                                                   
+Bruce                                                                                                                                                                                                                                                                                                       
+
+SQL> spool off;

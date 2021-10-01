@@ -1,0 +1,9 @@
+SQL> select name,city,state from client where NOT state='Maharashtra';
+
+NAME                 CITY            STATE                                                                                                                                                                                                                                                                  
+-------------------- --------------- ---------------                                                                                                                                                                                                                                                        
+Mamta Shah           Chennai         Tamil Nadu                                                                                                                                                                                                                                                             
+Ashni Joshi          Bangalore       Karnataka                                                                                                                                                                                                                                                              
+Deepak Sharma        Mangalore       Karnataka                                                                                                                                                                                                                                                              
+
+SQL> spool off;

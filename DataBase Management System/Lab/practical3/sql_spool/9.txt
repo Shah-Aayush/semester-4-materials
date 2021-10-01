@@ -1,0 +1,23 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select first_name, salary, salary * 1.12 , round(salary * 1.12, 2),ceil(salary * 1.12) , floor(salary * 1.12)
+  2* from employees
+SQL> /
+
+FIRST_NAME               SALARY SALARY*1.12 ROUND(SALARY*1.12,2) CEIL(SALARY*1.12) FLOOR(SALARY*1.12)                                                                                                                                                                                                       
+-------------------- ---------- ----------- -------------------- ----------------- ------------------                                                                                                                                                                                                       
+Steven                    24000       26880                26880             26880              26880                                                                                                                                                                                                       
+Neena                     17000       19040                19040             19040              19040                                                                                                                                                                                                       
+Lex                       17000       19040                19040             19040              19040                                                                                                                                                                                                       
+Alexander                  9000       10080                10080             10080              10080                                                                                                                                                                                                       
+Bruce                      6000        6720                 6720              6720               6720                                                                                                                                                                                                       
+David                      4800        5376                 5376              5376               5376                                                                                                                                                                                                       
+Valli                      4800        5376                 5376              5376               5376                                                                                                                                                                                                       
+Den                       11000       12320                12320             12320              12320                                                                                                                                                                                                       
+Karen                      2500        2800                 2800              2800               2800                                                                                                                                                                                                       
+William                    8300        9296                 9296              9296               9296                                                                                                                                                                                                       
+
+10 rows selected.
+
+SQL> spool off;

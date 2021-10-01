@@ -1,0 +1,10 @@
+SQL> select * from client where city='Mumbai' or city='Chennai';
+
+CLIENT NAME                 CITY               PINCODE STATE               BALDUE                                                                                                                                                                                                                           
+------ -------------------- --------------- ---------- --------------- ----------                                                                                                                                                                                                                           
+C01    Ivan Bayross         Mumbai              400054 Maharashtra          15000                                                                                                                                                                                                                           
+C02    Mamta Shah           Chennai             780001 Tamil Nadu               0                                                                                                                                                                                                                           
+C03    Chhaya Patel         Mumbai             4000057 Maharashtra           5000                                                                                                                                                                                                                           
+C05    Harsh Desai          Mumbai              400060 Maharashtra           2000                                                                                                                                                                                                                           
+
+SQL> spool off;

@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select count(*) from client where baldue=0 group by baldue
+SQL> /
+
+  COUNT(*)                                                                      
+----------                                                                      
+         2                                                                      
+
+SQL> spool off;

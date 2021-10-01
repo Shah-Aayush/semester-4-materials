@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<!--
+	STUDENT REGISTRATION FORM
+	
+-->
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="./8_style.css">
+	<script src="./8_script.js">//JAVASCRIPT for form validation :</script>
+</head>
+
+<body bgcolor=#cadefc>
+	<h1 style="white-space: nowrap;" align="center">
+		<font color="#383e56">STUDENT REGISTRATION FORM</font>
+	</h1>
+	<br>
+	<div id="container">
+
+		<div id="leftThing">
+			<!-- INPUT -->
+			<form id="registrationForm" method="post" onsubmit="return validateForm()" action="onSubmit.html">
+
+				<label>
+					Student Admission Type :
+				</label><br>
+				<input type="radio" name="addmissionType" value="12th" /> 12<sup>th</sup> based
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="gender" value="Diploma" /> Diploma based
+				<br><br>
+
+
+				<label>
+					Name of Student :
+				</label>
+				<br>
+				Mr<input type="radio" name="honorific" value="12th" />
+				Ms<input type="radio" name="honorific" value="Diploma" />&nbsp;&nbsp;<input type="text" name="OwnerName"
+					placeholder="Ansh Ray" id="name" style="width: 75%;" /> <br><br>
+
+
+				<!-- Address => TEXTAREA INPUT FIELD -->
+				Complete Address :
+				<br>
+				<textarea cols="25" rows=02" value="address" placeholder="Enter your address here" id="address"
+					required></textarea> <br> <br>
+
+				<label>City : </label>
+				<input list="cities" class="datalist_style" style="width: 30%;" placeholder="Select City">
+				<datalist id="cities">
+					<option value="Vadodara" />
+					<option value="Ahemdabad" />
+					<option value="Rajkot" />
+					<option value="Surat" />
+				</datalist>
+
+				<!-- States => SELECT OPTION -->
+				&nbsp;&nbsp;&nbsp;&nbsp;State :
+				<select required style="width: 40%;">
+					<option selected disabled>Select states</option>
+					<option value="Punjab">Punjab</option>
+					<option value="Gujarat">Gujarat</option>
+					<option value="Rajsthan">Rajsthan</option>
+					<option value="Delhi">Delhi</option>
+				</select> <br><br>
+				<hr>
+				<br>
+
+				<label> Birth Date : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="date" name="date" max="2005-01-01" required style="width: 50%;" /> <br> <br>
+
+
+				<label for="img">Birth Certificate Image File : </label>
+				<input type="file" id="img" name="img" accept="image/*" onchange="validateFileType()"><br><br>
+				<hr><br>
+
+				<!-- Email field => EMAIL INPUT FIELD -->
+				<label>Email:
+				</label><br>
+				<input type="email" id="email" name="email" placeholder="19BCE226@nirmauni.ac.in" required /> <br>
+				<br>
+
+				<!-- Moblie number => TEL INPUT FIELD -->
+				<label>Mobile number : </label>
+				<input type="tel" name="phone" placeholder="1234567890" pattern="[0-9]{10}"
+					title="Enter 10 digit number and avoid characters" id="phone" required />
+				<br> <br>
+				<hr><br>
+
+				<label>Pincode : </label>
+				<input type="tel" name="pin" pattern="[0-9]{6}" maxlength="6" placeholder="390023">
+				<br><br>
+				<hr><br>
+
+
+				Password: <br>
+				<input type="password" name="pass" placeholder="StrongPass123" id="password"> <br>
+				<br>
+				Confirm password: <br>
+				<input type="password" name="repass" placeholder="StrongPass123" id="rePassword"> <br> <br>
+				<hr><br>
+
+				<!-- Submit and Reset => BUTTONS -->
+				<pre><input type="Submit" value="Verify and Sign Up" form="registrationForm" class="button" style="margin-left: -5px;"/>&nbsp;&nbsp;<input type="Reset" value="Reset the Form" form="registrationForm" class="button" >	</pre>
+
+			</form>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

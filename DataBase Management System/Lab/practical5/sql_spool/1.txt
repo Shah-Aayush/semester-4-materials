@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select sum(salary) as "total expenditure" from employees  
+SQL> /
+
+total expenditure                                                                                                                                                                                                                                                                                           
+-----------------                                                                                                                                                                                                                                                                                           
+           104400                                                                                                                                                                                                                                                                                           
+
+SQL> spool off;

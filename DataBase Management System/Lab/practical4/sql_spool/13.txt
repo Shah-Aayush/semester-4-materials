@@ -1,0 +1,20 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select first_name,job_id from employees where instr(job_id,'CLERK') = 0
+SQL> /
+
+FIRST_NAME           JOB_ID                                                                                                                                                                                                                                                                                 
+-------------------- ----------------------------------------                                                                                                                                                                                                                                               
+Steven               PRESIDENT                                                                                                                                                                                                                                                                              
+Neena                VICE PRESIDENT                                                                                                                                                                                                                                                                         
+Lex                  VICE PRESIDENT                                                                                                                                                                                                                                                                         
+Alexander            IT PROG                                                                                                                                                                                                                                                                                
+Bruce                FINANCIAL MANAGER                                                                                                                                                                                                                                                                      
+David                IT PROG                                                                                                                                                                                                                                                                                
+Valli                FINANCE ACCOUNTANT                                                                                                                                                                                                                                                                     
+William              ACCOUNTANT                                                                                                                                                                                                                                                                             
+
+8 rows selected.
+
+SQL> spool off;

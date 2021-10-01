@@ -1,0 +1,103 @@
+CPU utilization = 1 - k^n
+where k = time which process require I/O operation
+	  n = number of processes can come in memory
+			[ n = size of ram / size of process ]
+	
+Memory management allocation techniques
+Contiguos :
+	1. Fixed partitioning
+		Pros : 
+			Allocation / deallocation is easy
+			easy to implement
+			not complex
+		Cons : 
+			Internal Fragmentation [=>which will lead to external fragmentation]
+			Limitation on number of processes as well as size of process.
+			External Fragmentation
+		
+			
+	2. Variable partitioning	[dynamic]
+		Pros : 
+			No internal fragmentation
+			No limitation on process's size
+			No limitation on number of processes
+				
+		Cons : 	
+			External fragmentation [on removal of several process => creates holes]	-> [==> solution is compaction(which is not desirable)]
+			Allocation / deallocation is complex
+			
+	=> ALGO :
+		1. First fit : Allocate the first hole that is big enough 
+			Simple, Fast, minimum time
+			May be bigger internal fragementation
+			
+		2. Next fit : same as first fit but start search always from last allocated hole
+			modified version of first fit
+			
+		3. Best fit : allocate the smallest hole that is big enough
+			minimum internal fragmentation
+			search the entire list
+		
+		4. Worst fit : allocate the largest hole 
+			
+Non Congtingous : 
+	
+	Every process will be divided into PAGES
+	Main Memory will be divided into FRAMES
+	
+	Size of page = size of frame
+	
+	-> External Fragmentation will be removed here.
+	-> Memory is a byte/word addressable
+	-> CPU works on logical address
+	
+	
+	Logical address = Page number [number of pages : 1 byte for representing 2 pages;...] + Page offset [page size : 1 byte for representing 2 bytes; 2 bytes for representing 4 bytes; 3 bytes for representing 8 bytes]
+		=> requires page table
+	
+	Physical address = directly related to main memory : it represents where the actual bit is stored.
+					= Frame number + Frame offset [frame size]
+	
+	Frame offset in physical address and page offset in logical address will be same.
+	
+	
+	=>IMP points for sums : 
+		> Frame offset and page offset have equal value.
+		> Number of entries in page table = number of pages in a process.
+		
+
+	=> QUESTION
+		Logical Address Space - 4 GB
+		Physical Address Space - 64 MB
+		Page size - 4 KB
+		
+		No. of pages = ?
+		No. of frames = ?
+		No. of entries in page table = ? 
+		Size of page table = ?
+		
+		--> Logical Address Space is 4 GB => Logical Address Space = 2^2 * 2^30 Bits => Logical Address requires 32 Bits to store the address.
+		because : 
+			2^10 = kb
+			2^20 = mb
+			2^30 = gb
+			2^40 = tb
+			
+		--> Physical address requires (2^6*2^20)=26 bits.
+		--> Page requires (2^2*2^10)=12 bits.
+		
+		--> Logical address = number of pages + size of page.		[all things are require bits for storage]
+			32 				= ?				  + 12
+			>> number of pages = (20)	=2^20
+			
+		--> size of frames = size of pages = 12.
+		--> Physical addresss = number of frames + size of frame.
+			26				  = ? 				 + 12
+			>> number of frames = (14)	=2^14
+		
+		--> number of entries in pages table = number of pages in a process = (20)	=2^20
+*TOUGH 	--> Size of page table = number of entries * size of each entry
+							   = number of pages   * size of each frame
+							   = 2^20			   * 14
+		
+			

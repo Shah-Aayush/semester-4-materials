@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select productno,description,sellprice,(sellprice- costprice)/costprice Highest_Profit_per_unit from product where ((sellprice-costprice)/costprice)=(select max((sellprice- costprice)/costprice) from product)
+SQL> /
+
+PRODUC DESCRIPTION      SELLPRICE HIGHEST_PROFIT_PER_UNIT                       
+------ --------------- ---------- -----------------------                       
+P06734 Mouse                 1050                     1.1                       
+
+SQL> spool off;

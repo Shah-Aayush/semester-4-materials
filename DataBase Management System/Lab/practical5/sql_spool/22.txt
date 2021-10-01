@@ -1,0 +1,14 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select salesmanno,sum(salamt) from salesman group by salesmanno
+SQL> /
+
+SALESM SUM(SALAMT)                                                                                                                                                                                                                                                                                                                                                                                              
+------ -----------                                                                                                                                                                                                                                                                                                                                                                                              
+S01           3000                                                                                                                                                                                                                                                                                                                                                                                              
+S02           3000                                                                                                                                                                                                                                                                                                                                                                                              
+S03           3000                                                                                                                                                                                                                                                                                                                                                                                              
+S04           3500                                                                                                                                                                                                                                                                                                                                                                                              
+
+SQL> spool off;

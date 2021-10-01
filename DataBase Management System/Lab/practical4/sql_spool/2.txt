@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select first_name from employees where first_name like 'K____'
+SQL> /
+
+FIRST_NAME                                                                                                                                                                                                                                                                                                  
+--------------------                                                                                                                                                                                                                                                                                        
+Karen                                                                                                                                                                                                                                                                                                       
+
+SQL> spool off;

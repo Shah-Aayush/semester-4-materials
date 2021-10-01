@@ -1,0 +1,15 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select first_name from employees where length(first_name) = 5
+SQL> /
+
+FIRST_NAME                                                                                                                                                                                                                                                                                                  
+--------------------                                                                                                                                                                                                                                                                                        
+Neena                                                                                                                                                                                                                                                                                                       
+Bruce                                                                                                                                                                                                                                                                                                       
+David                                                                                                                                                                                                                                                                                                       
+Valli                                                                                                                                                                                                                                                                                                       
+Karen                                                                                                                                                                                                                                                                                                       
+
+SQL> spool off;

@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select count(employee_id) as number_of_employees from employees where salary >= (select avg(salary) from employees)
+SQL> /
+
+NUMBER_OF_EMPLOYEES                                                                                                                                                                                                                                                                                         
+-------------------                                                                                                                                                                                                                                                                                         
+                  4                                                                                                                                                                                                                                                                                         
+
+SQL> spool off;

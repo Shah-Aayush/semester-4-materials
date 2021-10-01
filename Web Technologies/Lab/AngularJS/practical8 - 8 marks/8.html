@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<!--Design a student registration form using AngularJS and apply number, uppercase, and lowercase filters to the appropriate fields.-->
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="./8_style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script src="./8_script.js">//JAVASCRIPT for form validation :</script>
+	<!--AngularJS library from CDN-->
+</head>
+
+<body ng-app="mainApp" ng-controller="detailsOfStudent" bgcolor=#cadefc>
+	<h1 style="white-space: nowrap;" align="center">
+		<font color="#383e56">STUDENT REGISTRATION FORM</font>
+	</h1>
+	<br>
+	<div id="container">
+
+		<div id="leftThing">
+			<!-- INPUT -->
+			<form id="registrationForm" method="post" onsubmit="return validateForm()">
+
+				<label> First name : &nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="firstname" size="15" placeholder="Aayush" maxlength="20" id="first_name"
+					ng-model="student.first_name" /> <br> <br>
+				<label> Middle name : </label>
+				<input type="text" name="middlename" size="15" placeholder="Umeshbhai" id="middle_name"
+					ng-model="student.middle_name" /> <br> <br>
+				<label> Last name : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="lastname" size="15" placeholder="Shah" id="last_name"
+					ng-model="student.last_name" /> <br> <br>
+				<label> Date of Birth : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="date" name="lastname" size="15" ng-model="student.date_of_birth" /> <br> <br>
+
+				<label>
+					Gender :
+				</label>
+				<input type="radio" name="gender" value="Male" ng-model="student.gender" /> Male
+				<input type="radio" name="gender" value="Female" ng-model="student.gender" /> Female
+				<br>
+
+				<br>
+				<label>
+					Hobby :
+				</label>
+				<input type="checkbox" name="Hobby" value="Reading" checked ng-model="student.hobby.value1"
+					ng-true-value="'Reading'" ng-false-value="' '">Readinig
+				<input type="checkbox" name="Hobby" value="Dancing" ng-model="student.hobby.value2"
+					ng-true-value="'Dancing'" ng-false-value="' '">Dancing
+				<input type="checkbox" name="Hobby" value="Singing" ng-model="student.hobby.value3"
+					ng-true-value="'Singinig'" ng-false-value="' '">Singing
+				<br>
+				<br>
+				Course:
+				<select ng-model="student.course">
+					<!--			<select multiple>-->
+					<!--			include multiple for selecting multiple options	-->
+					<option selected disabled>Select course</option>
+					<option value="Course">Course</option>
+					<option value="BCA">BCA</option>
+					<option value="BBA">BBA</option>
+					<option value="B.Tech">B.Tech</option>
+					<option value="MBA">MBA</option>
+					<option value="MCA">MCA</option>
+					<option value="M.Tech">M.Tech</option>
+				</select>
+				<br>
+				<br>
+
+				<label>Phone number : </label>
+				<input type="text" name="phone" size="10" placeholder="9898123123" ng-model="student.phone_number" />
+				<br> <br>
+				Address :
+				<br>
+				<textarea cols="40" rows="5" value="address" placeholder="Enter your address here"
+					ng-model="student.address"></textarea>
+				<br> <br>
+				<label>Email: <label><br>
+						<input type="email" id="email" name="email" placeholder="19BCE245@nirmauni.ac.in"
+							ng-model="student.email" /> <br>
+						<br>
+						Password: <br>
+						<input type="Password" name="pass" placeholder="Str0ngP@ss123" id="password"
+							ng-model="student.password"> <br>
+						<br>
+						Re-type password: <br>
+						<input type="Password" name="repass" placeholder="Str0ngP@ss123" id="rePassword"
+							ng-model="student.re_password"> <br> <br>
+
+			</form>
+		</div>
+
+		<div id="rightThing">
+			<!-- OUTPUT -->
+			<form id="registrationForm" method="post" onsubmit="return validateForm()">
+				<label> First name : &nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="firstname" size="15" maxlength="20" id="first_name" placeholder="Aayush"
+					value="{{student.first_name | capitalize}}" /> <br> <br>
+				<label> Middle name : </label>
+				<input type="text" name="middlename" size="15" placeholder="Umeshbhai" id="middle_name"
+					value="{{student.middle_name | capitalize}}" /> <br> <br>
+				<label> Last name : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="lastname" size="15" placeholder="Shah" id="last_name"
+					value="{{student.last_name | capitalize}}" /> <br> <br>
+				<label> Date of Birth : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{student.date_of_birth |
+					date:'dd-MM-yyyy'}}</label>
+				<br>
+
+
+				<br>
+				<label>
+					Gender :
+				</label>
+				{{student.gender}}
+				<br>
+
+				<br>
+				<label>
+					Hobby :
+				</label>
+				{{student.hobby.value1}} {{student.hobby.value2}} {{student.hobby.value3}}
+				<br>
+				<br>
+				Course:
+					<!--			<select multiple>-->
+					<!--			include multiple for selecting multiple options	-->
+					<input type="text" value="{{student.course}}" />
+				<br>
+				<br>
+				<label>Phone number : </label>
+				<input type="text" name="phone" size="10" maxlength="10" placeholder="9898123123"
+					value="{{student.phone_number | limitTo:10 }}" /> <br> <br>
+				Address :
+				<br>
+				<textarea cols="40" rows="5" value="address"
+					placeholder="Enter your address here">{{student.address | capitalize}}</textarea>
+				<br> <br>
+				<label>Email: <label><br>
+						<input type="text" placeholder="19BCE245@nirmauni.ac.in"
+							value="{{student.email | lowercase}}" /> <br>
+						<br>
+						Password: <br>
+						<input type="text" name="pass" placeholder="Str0ngP@ss123" id="password"
+							value="{{student.password | uppercase}}"> <br>
+						<br>
+						Re-type password: <br>
+						<input type="text" name="repass" placeholder="Str0ngP@ss123" id="rePassword"
+							value="{{student.re_password | uppercase}}"> <br> <br>
+
+			</form>
+		</div>
+
+	</div>
+	<br>
+	<pre><input type="Submit" value="Submit" form="registrationForm" class="button"  style="width: 25%;margin-left:250px;"/>&nbsp;<input type="Reset" value="Reset" form="registrationForm" class="button" style="width: 25%;margin-left:210px;">	</pre>
+
+</body>
+
+</html>

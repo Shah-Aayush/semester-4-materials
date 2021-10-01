@@ -1,0 +1,46 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  CREATE TABLE sales_order_details1( 
+  2  orderno varchar2(6),
+  3  productno varchar2(6),
+  4  qtyordered number(8),
+  5  productrate number(10,2) 
+  6* )
+SQL> /
+
+Table created.
+
+SQL> 
+SQL> ed
+Wrote file afiedt.buf
+
+  1  ALTER TABLE sales_order_details1
+  2  ADD CONSTRAINT FK_sales_order_details1
+  3* FOREIGN KEY (orderno) REFERENCES sales_order1(orderno)
+SQL> /
+
+Table altered.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  ALTER TABLE sales_order_details1
+  2  ADD CONSTRAINT FK_sales_order_details11
+  3* FOREIGN KEY (productno) REFERENCES product1(productno)
+SQL> /
+
+Table altered.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  ALTER TABLE salesman1
+  2* MODIFY remarks varchar2(60) NOT NULL;
+SQL> /
+MODIFY remarks varchar2(60) NOT NULL;
+                                    *
+ERROR at line 2:
+ORA-00911: invalid character 
+
+SQL> spool off;

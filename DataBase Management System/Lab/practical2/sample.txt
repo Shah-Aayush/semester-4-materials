@@ -1,0 +1,412 @@
+SQL> select * from product;
+SP2-0640: Not connected
+SQL> connect aayush/Niyati34
+Connected.
+SQL> select * from product;
+
+PRODUC DESCRIPTION     PROFITPERCENT UNITMEASUR  QTYONHAND REORDERLVL  SELLPRICE
+------ --------------- ------------- ---------- ---------- ---------- ----------
+ COSTPRICE                                                                      
+----------                                                                      
+P00001 1.44 Floppies               5 Piece             100         20        525
+       500                                                                      
+                                                                                
+P03453 Monitors                    6 Piece              10          3      12000
+     11200                                                                      
+                                                                                
+P06734 Mouse                       5 Piece              20          5       1050
+       500                                                                      
+                                                                                
+
+PRODUC DESCRIPTION     PROFITPERCENT UNITMEASUR  QTYONHAND REORDERLVL  SELLPRICE
+------ --------------- ------------- ---------- ---------- ---------- ----------
+ COSTPRICE                                                                      
+----------                                                                      
+P07865 1.22 Floppies               5 Piece             100         20        525
+       500                                                                      
+                                                                                
+P07868 Keyboards                   2 Piece              10          3       3150
+      3050                                                                      
+                                                                                
+
+SQL> select * from sales_order;
+
+ORDERN CLIENT ORDERSTA SALESM D B DELAYDAT ORDERSTATU                           
+------ ------ -------- ------ - - -------- ----------                           
+O19001 C01    12-01-16 S01    F N 20-01-16 In Process                           
+O19002 C02    25-01-17 S02    P N 27-01-17 Cancelled                            
+O46865 C03    18-02-17 S03    F Y 20-02-17 Fullfilled                           
+O19003 C01    03-04-16 S01    F Y 07-04-16 Fullfilled                           
+O46866 C04    20-05-16 S04    P N 22-05-16 Cancelled                            
+O19008 C05    24-05-16 S05    F N 26-05-16 In Process                           
+
+6 rows selected.
+
+SQL> select * from sales_order order by Orderno,client DESC;
+select * from sales_order order by Orderno,client DESC
+                                           *
+ERROR at line 1:
+ORA-00904: "CLIENT": invalid identifier 
+
+
+SQL> desc sales_order;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ORDERNO                                            VARCHAR2(6)
+ CLIENTNO                                           VARCHAR2(6)
+ ORDERSTATE                                         DATE
+ SALESMANNO                                         VARCHAR2(6)
+ DELAYTYPE                                          CHAR(1)
+ BILLYN                                             CHAR(1)
+ DELAYDATE                                          DATE
+ ORDERSTATUS                                        VARCHAR2(10)
+
+SQL> select * from sales_order order by orderno,clientno DESC;
+
+ORDERN CLIENT ORDERSTA SALESM D B DELAYDAT ORDERSTATU                           
+------ ------ -------- ------ - - -------- ----------                           
+O19001 C01    12-01-16 S01    F N 20-01-16 In Process                           
+O19002 C02    25-01-17 S02    P N 27-01-17 Cancelled                            
+O19003 C01    03-04-16 S01    F Y 07-04-16 Fullfilled                           
+O19008 C05    24-05-16 S05    F N 26-05-16 In Process                           
+O46865 C03    18-02-17 S03    F Y 20-02-17 Fullfilled                           
+O46866 C04    20-05-16 S04    P N 22-05-16 Cancelled                            
+
+6 rows selected.
+
+SQL> create table sales_order_demo(Clientno,orderno) as select clientno,from sales_order;
+create table sales_order_demo(Clientno,orderno) as select clientno,from sales_order
+                                                                   *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* create table sales_order_demo(Clientno,orderno) as select clientno from sales_order
+SQL> [A
+SP2-0042: unknown command "[A" - rest of line ignored.
+SQL> 
+SQL> /
+create table sales_order_demo(Clientno,orderno) as select clientno from sales_order
+                              *
+ERROR at line 1:
+ORA-01730: invalid number of column names specified 
+
+
+SQL> q
+SP2-0042: unknown command "q" - rest of line ignored.
+SQL> ed
+Wrote file afiedt.buf
+
+  1* create table sales_order_demo(Clientno,orderno) as select clientno,orderno from sales_order
+SQL> [A
+SP2-0042: unknown command "[A" - rest of line ignored.
+SQL> 
+SQL> /
+
+Table created.
+
+SQL> select * from sales_order_demo;
+
+CLIENT ORDERN                                                                   
+------ ------                                                                   
+C01    O19001                                                                   
+C02    O19002                                                                   
+C03    O46865                                                                   
+C01    O19003                                                                   
+C04    O46866                                                                   
+C05    O19008                                                                   
+
+6 rows selected.
+
+SQL> update sales_order_demo set clientno=C04;
+update sales_order_demo set clientno=C04
+                                     *
+ERROR at line 1:
+ORA-00904: "C04": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* update sales_order_demo set clientno='C04'
+SQL> /
+
+6 rows updated.
+
+SQL> select * from sales_order_demo;
+
+CLIENT ORDERN                                                                   
+------ ------                                                                   
+C04    O19001                                                                   
+C04    O19002                                                                   
+C04    O46865                                                                   
+C04    O19003                                                                   
+C04    O46866                                                                   
+C04    O19008                                                                   
+
+6 rows selected.
+
+SQL> update sales_order_demo set clientno='C01' where orderno='O19001';
+
+1 row updated.
+
+SQL> select * from sales_order_demo;
+
+CLIENT ORDERN                                                                   
+------ ------                                                                   
+C01    O19001                                                                   
+C04    O19002                                                                   
+C04    O46865                                                                   
+C04    O19003                                                                   
+C04    O46866                                                                   
+C04    O19008                                                                   
+
+6 rows selected.
+
+SQL> alter sales_order_demo add(DName number(4));
+alter sales_order_demo add(DName number(4))
+      *
+ERROR at line 1:
+ORA-00940: invalid ALTER command 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* alter table sales_order_demo add(DName number(4))
+SQL> /
+
+Table altered.
+
+SQL> select * from sales_order_demo;
+
+CLIENT ORDERN      DNAME                                                        
+------ ------ ----------                                                        
+C01    O19001                                                                   
+C04    O19002                                                                   
+C04    O46865                                                                   
+C04    O19003                                                                   
+C04    O46866                                                                   
+C04    O19008                                                                   
+
+6 rows selected.
+
+SQL> update sales_order_demo set Dname = 123 where Client='C01';
+update sales_order_demo set Dname = 123 where Client='C01'
+                                              *
+ERROR at line 1:
+ORA-00904: "CLIENT": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* update sales_order_demo set Dname = 123 where Clientno='C01'
+SQL> /
+
+1 row updated.
+
+SQL> select * from sales_order_demo;
+
+CLIENT ORDERN      DNAME                                                        
+------ ------ ----------                                                        
+C01    O19001        123                                                        
+C04    O19002                                                                   
+C04    O46865                                                                   
+C04    O19003                                                                   
+C04    O46866                                                                   
+C04    O19008                                                                   
+
+6 rows selected.
+
+SQL> insert into sales_order_demo values('C04','012312','321');
+
+1 row created.
+
+SQL> select * from sales_order_demo;
+
+CLIENT ORDERN      DNAME                                                        
+------ ------ ----------                                                        
+C01    O19001        123                                                        
+C04    O19002                                                                   
+C04    O46865                                                                   
+C04    O19003                                                                   
+C04    O46866                                                                   
+C04    O19008                                                                   
+C04    012312        321                                                        
+
+7 rows selected.
+
+SQL> rename sales_order_demo to sales_order_sample;
+
+Table renamed.
+
+SQL> select * from sales_order_sample;
+
+CLIENT ORDERN      DNAME                                                        
+------ ------ ----------                                                        
+C01    O19001        123                                                        
+C04    O19002                                                                   
+C04    O46865                                                                   
+C04    O19003                                                                   
+C04    O46866                                                                   
+C04    O19008                                                                   
+C04    012312        321                                                        
+
+7 rows selected.
+
+SQL> insert into sales_order_sample select orderno,client from sales_order;
+insert into sales_order_sample select orderno,client from sales_order
+                                              *
+ERROR at line 1:
+ORA-00904: "CLIENT": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into sales_order_sample select orderno,clientno from sales_order
+SQL> /
+insert into sales_order_sample select orderno,clientno from sales_order
+            *
+ERROR at line 1:
+ORA-00947: not enough values 
+
+
+SQL> delete from sales_order_sample where dname=321;
+
+1 row deleted.
+
+SQL> select * from sales_order_sample;
+
+CLIENT ORDERN      DNAME                                                        
+------ ------ ----------                                                        
+C01    O19001        123                                                        
+C04    O19002                                                                   
+C04    O46865                                                                   
+C04    O19003                                                                   
+C04    O46866                                                                   
+C04    O19008                                                                   
+
+6 rows selected.
+
+SQL> insert into sales_order_sample select orderno,clientno from sales_order;
+insert into sales_order_sample select orderno,clientno from sales_order
+            *
+ERROR at line 1:
+ORA-00947: not enough values 
+
+
+SQL> select * from sales_order;
+
+ORDERN CLIENT ORDERSTA SALESM D B DELAYDAT ORDERSTATU                           
+------ ------ -------- ------ - - -------- ----------                           
+O19001 C01    12-01-16 S01    F N 20-01-16 In Process                           
+O19002 C02    25-01-17 S02    P N 27-01-17 Cancelled                            
+O46865 C03    18-02-17 S03    F Y 20-02-17 Fullfilled                           
+O19003 C01    03-04-16 S01    F Y 07-04-16 Fullfilled                           
+O46866 C04    20-05-16 S04    P N 22-05-16 Cancelled                            
+O19008 C05    24-05-16 S05    F N 26-05-16 In Process                           
+
+6 rows selected.
+
+SQL> update sales_order_sample set clientno='C02',Orderno='123abc' where orderno='O19002';
+
+1 row updated.
+
+SQL> select * from sales_order_sample;
+
+CLIENT ORDERN      DNAME                                                        
+------ ------ ----------                                                        
+C01    O19001        123                                                        
+C02    123abc                                                                   
+C04    O46865                                                                   
+C04    O19003                                                                   
+C04    O46866                                                                   
+C04    O19008                                                                   
+
+6 rows selected.
+
+SQL> select orderno from sales_order_sample where orderno like '1%';
+
+ORDERN                                                                          
+------                                                                          
+123abc                                                                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select orderno from sales_order_sample where orderno like '__9%'
+SQL> /
+
+ORDERN                                                                          
+------                                                                          
+O19001                                                                          
+O19003                                                                          
+O19008                                                                          
+
+SQL> select orderno from sales_order_sample where orderno like '[1O]%';
+
+no rows selected
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select orderno from sales_order_sample where orderno like '[1-4]%'
+SQL> /
+
+no rows selected
+
+SQL> truncate sales_order_sample;
+truncate sales_order_sample
+                          *
+ERROR at line 1:
+ORA-03290: Invalid truncate command - missing CLUSTER or TABLE keyword 
+
+
+SQL> truncate table sale_order_sample;
+truncate table sale_order_sample
+               *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* truncate table sales_order_sample
+SQL> /
+
+Table truncated.
+
+SQL> select * from sales_order_sample;
+
+no rows selected
+
+SQL> desc sales_order_sample;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CLIENTNO                                           VARCHAR2(6)
+ ORDERNO                                            VARCHAR2(6)
+ DNAME                                              NUMBER(4)
+
+SQL> drop sales_order_sample;
+drop sales_order_sample
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option 
+
+
+SQL> drop table sales_order_sample;
+
+Table dropped.
+
+SQL> desc sales_order_sample;
+ERROR:
+ORA-04043: object sales_order_sample does not exist 
+
+
+SQL> spool off;

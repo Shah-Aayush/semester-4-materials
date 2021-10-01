@@ -1,0 +1,15 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select first_name,salary,salary * 1.2 from employees where salary * 1.2 > 10000 
+SQL> /
+
+FIRST_NAME               SALARY SALARY*1.2                                                                                                                                                                                                                                                                  
+-------------------- ---------- ----------                                                                                                                                                                                                                                                                  
+Steven                    24000      28800                                                                                                                                                                                                                                                                  
+Neena                     17000      20400                                                                                                                                                                                                                                                                  
+Lex                       17000      20400                                                                                                                                                                                                                                                                  
+Alexander                  9000      10800                                                                                                                                                                                                                                                                  
+Den                       11000      13200                                                                                                                                                                                                                                                                  
+
+SQL> spool  off;

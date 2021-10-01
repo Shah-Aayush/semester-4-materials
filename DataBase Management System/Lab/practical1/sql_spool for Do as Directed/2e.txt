@@ -1,0 +1,15 @@
+SQL> select * from product where sellprice>500 AND sellprice<=750;
+
+PRODUC DESCRIPTION     PROFITPERCENT UNITMEASUR  QTYONHAND REORDERLVL  SELLPRICE  COSTPRICE                                                                                                                                                                                                                 
+------ --------------- ------------- ---------- ---------- ---------- ---------- ----------                                                                                                                                                                                                                 
+P00001 1.44 Floppies               5 Piece             100         20        525        500                                                                                                                                                                                                                 
+P07865 1.22 Floppies               5 Piece             100         20        525        500                                                                                                                                                                                                                 
+
+SQL> select * from product where sellprice BETWEEN 501 AND 750;
+
+PRODUC DESCRIPTION     PROFITPERCENT UNITMEASUR  QTYONHAND REORDERLVL  SELLPRICE  COSTPRICE                                                                                                                                                                                                                 
+------ --------------- ------------- ---------- ---------- ---------- ---------- ----------                                                                                                                                                                                                                 
+P00001 1.44 Floppies               5 Piece             100         20        525        500                                                                                                                                                                                                                 
+P07865 1.22 Floppies               5 Piece             100         20        525        500                                                                                                                                                                                                                 
+
+SQL> spool off;

@@ -1,0 +1,12 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select job_id,avg(salary) from employees group by job_id having job_id='VICE PRESIDENT' or job_id='IT PROG'
+SQL> /
+
+JOB_ID                                   AVG(SALARY)                                                                                                                                                                                                                                                        
+---------------------------------------- -----------                                                                                                                                                                                                                                                        
+VICE PRESIDENT                                 17000                                                                                                                                                                                                                                                        
+IT PROG                                         6900                                                                                                                                                                                                                                                        
+
+SQL> spool off;

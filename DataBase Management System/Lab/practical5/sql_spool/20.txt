@@ -1,0 +1,18 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select employee_id, first_name as name ,extract(year from sysdate) - extract(year from hire_date) as experience from employees where extract(year from sysdate) - extract(year from hire_date) > 10
+SQL> /
+
+EMPLOYEE_ID NAME                 EXPERIENCE                                                                                                                                                                                                                                                                 
+----------- -------------------- ----------                                                                                                                                                                                                                                                                 
+        100 Steven                       21                                                                                                                                                                                                                                                                 
+        105 David                        20                                                                                                                                                                                                                                                                 
+        106 Valli                        20                                                                                                                                                                                                                                                                 
+        114 Den                          31                                                                                                                                                                                                                                                                 
+        119 Karen                        34                                                                                                                                                                                                                                                                 
+        206 William                      16                                                                                                                                                                                                                                                                 
+
+6 rows selected.
+
+SQL> spool off;

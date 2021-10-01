@@ -1,0 +1,36 @@
+ADDRESSING MODES
+
+1.	IMPLIED MODE
+	operands are specified implicitly in the definition of the instruction 
+	ex.:  CMA (complement accumulator)
+	
+2.  IMMEDIATE MODE
+	Operand  is specified in the instruction itself.
+	ex.: MOV R1, 05H
+	
+3.  REGISTER MODE
+	Operands are in register that reside within CPU.
+	ex.: MOV AX,BX
+	
+4.  REGISTER INDIRECT MODE
+	instruction specifies a register in the CPU whose content give the address of the operand in memory
+	ex.: MOV [R1],R2
+	
+5.  AUTOINCREMENT or AUTODECREMENT MODE
+	similar to the register indirect mode expect that the  register is incremented or decremented after or before its value is used to access memory.
+	
+6.  DIRECT ADDRESS MODE
+	the  effective address is equal to the address part of the instruction
+	ex.: ADD 457
+	
+7.  INDIRECT ADDRESS MODE
+	Effective address = address part of instruction + content of CPU register
+	
+8.  RELATIVE ADDRESSING MODE
+	Effective address = address part of instruction + content of PC
+	
+9.  INDEXED ADDRESSING MODE
+	Effective address = address part of instruction + content of index register
+	
+10. BASE REGISTER ADDRESSING MODE
+	Effective address = address part of instruction + content of base register

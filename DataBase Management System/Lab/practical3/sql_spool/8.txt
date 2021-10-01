@@ -1,0 +1,24 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select first_name, last_name, phone_number,
+  2  replace(phone_number, '515', '815')
+  3* from employees
+SQL> /
+
+FIRST_NAME           LAST_NAME                 PHONE_NUMBER         REPLACE(PHONE_NUMBER,'515','815')                                                                                                                                                                                                       
+-------------------- ------------------------- -------------------- ------------------------------------------------------------                                                                                                                                                                            
+Steven               King                      515.123.4567         815.123.4567                                                                                                                                                                                                                            
+Neena                Kochhar                   515.123.4568         815.123.4568                                                                                                                                                                                                                            
+Lex                  De Haan                   123.515.4569         123.815.4569                                                                                                                                                                                                                            
+Alexander            Hunold                    590.423.4567         590.423.4567                                                                                                                                                                                                                            
+Bruce                Ernst                     590.423.4568         590.423.4568                                                                                                                                                                                                                            
+David                Austin                    590.423.4569         590.423.4569                                                                                                                                                                                                                            
+Valli                Pataballa                 590.423.4560         590.423.4560                                                                                                                                                                                                                            
+Den                  Raphaely                  515.127.4561         815.127.4561                                                                                                                                                                                                                            
+Karen                Colmenares                515.127.4566         815.127.4566                                                                                                                                                                                                                            
+William              Gietz                     515.123.8181         815.123.8181                                                                                                                                                                                                                            
+
+10 rows selected.
+
+SQL> spool off;

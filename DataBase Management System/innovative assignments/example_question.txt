@@ -1,0 +1,31 @@
+Example questions : 
+
+	1.	Display student student_id, email ,logged_in_time who have logged in after 10:50:00
+		-> Simple select statement with where condition [with join operation on student table].
+		
+	2.	Display subject name and subject code of branch id = 101.
+		-> only select statement from subject  statement.
+		
+	3.	Display students who have failed [student_id, marks_obtained]
+		-> In result table.
+	
+	4.	Total number of student in each branch.
+		-> count operation + group by in student table.
+		
+	5.	Count the number of students who have passed the examination Group by branch.
+		-> Join student + result =>  Groupby Branch id.
+		
+	6.	details of exams taken on 18/02/2021 date	[change date] 
+		-> Change dates in actual database.
+		
+	7.	Display student details who have obtained marks greater than 85.
+		->Simple where clause in table [ merge : student + result ].
+		
+	8.	Display branch id,branch name, total credits [of each branch] through sum() function on groupby branch id		
+		-> Merge this subject table with [ branch table -> sum function with groupby ].
+		
+	9.	Exam with exam id=3 is taken by how many number of student ? 
+		-> In attendance table. count operation.	[modify some exam id to 3 to display more data.]
+	
+	10. Total number of exam taken by each student 
+		-> Perform groupby on student id in table attendance.

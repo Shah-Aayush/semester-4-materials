@@ -1,0 +1,42 @@
+what happens when you power on
+	The boot loader's job is to start the real operating system. POST (Power On Self Test) The Power On Self Test happens each time you turn your computer on. ... Your computer does so much when its turned on and this is just part of that. It initializes the various hardware devices.
+
+Bios Hardware or software
+	The BIOS [Basic Input/Output System] is special software that interfaces the major hardware components of your computer with the operating system. It is usually stored on a Flash memory chip on the motherboard, but sometimes the chip is another type of ROM.
+	
+Where is os stored before and after power on
+	So in computers, Operating System is installed and stored on the hard disk. As hard disk is a non volatile memory, OS does not lose on the turn off. But as the data access from the hard disk is very, slow just after the computer is started OS is copied into RAM from the hard disk.
+
+32 bit vs 64 bit os
+	A 32-bit system can access 232 memory addresses, i.e 4 GB of RAM or physical memory ideally, it can access more than 4 GB of RAM also. A 64-bit system can access 264 memory addresses, i.e actually 18-Quintillion bytes of RAM. In short, any amount of memory greater than 4 GB can be easily handled by it.
+	
+Why is linux secure
+	Linux is the Most Secure Because it's Highly Configurable
+	Security and usability go hand-in-hand, and users will often make less secure decisions if they have to fight against the OS just to get their work done.
+	Linux has multiple advantages when it comes to security, but no operating system is totally secure. One issue currently facing Linux is its growing popularity. For years, Linux was primarily used by a smaller, more tech-centric demographic.
+	Linux isn't really more secure than Windows. It's really more a matter of scope than anything. ... No operating system is more secure than any other, the difference is in the number of attacks and scope of attacks. As a point you should look at the number of viruses for Linux and for Windows.	
+	
+How to print only min of time of your computer
+
+How to edit file using command such that every lines except line 1 will get deleted
+	head -1 hello.txt > f2.txt
+	
+If we have movie file in our pc then where it is saved
+	hard disk
+	
+If we click on play option then it is transfer to which storage (RAM or ROM)
+	RAM
+		
+What is virtual memory
+	Virtual Memory is a storage allocation scheme in which secondary memory can be addressed as though it were part of main memory. The addresses a program may use to reference memory are distinguished from the addresses the memory system uses to identify physical storage sites, and program generated addresses are translated automatically to the corresponding machine addresses.
+	
+Is Virtual memory real or illusion
+	Virtual memory is a scheme that gives users the illusion of working with a large block of contiguous memory space (perhaps even larger than real memory), when in actuality most of their work is on auxiliary storage (disk). Fixed-size blocks (pages) or variable-size…
+	
+Does virtual memory benefits us and if yes then how?
+	The primary benefits of virtual memory include freeing applications from having to manage a shared memory space, ability to share memory used by libraries between processes, increased security due to memory isolation, and being able to conceptually use more memory than might be physically available, using the technique ...
+	
+What is paging
+	Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory. This scheme permits the physical address space of a process to be non – contiguous.
+	
+	

@@ -1,0 +1,88 @@
+Multiple regression
+-
+it is nothing but an extension of simple linear regression.but instead of 1 
+independent variable we have more that one independent variable and we try to fit a linear equation using observed data
+
+
+Linear regression
+-
+Linear regression attempts to model the relationship between two variables by 
+fitting a linear equation to observed data. One variable is considered to be an explanatory variable,
+and the other is considered to be a dependent variable.
+
+
+Correlation
+-
+The degree of relationship between the variables under
+consideration is measure through the correlation analysis.
+When the y variable tends to increase as the x variable increases, 
+we say there is a positive correlation between the variables. 
+When the y variable tends to decrease as the x variable increases, 
+we say there is a negative correlation between the variables
+
+
+Conditional probability 
+-
+conditional probability is defined as the likelihood[-chance/probability] of an event or outcome occurring, 
+based on the occurrence of a previous event or outcome.
+
+
+
+the Bayes’ theorem
+-
+the Bayes’ theorem is used to determine the conditional probability of events. 
+Essentially, the Bayes’ theorem describes the probability of an event based on 
+prior knowledge of the conditions that might be relevant to the event.
+
+
+Accuracy of linear regression
+-
+Root mean square error RMSE tells how much data is concentrated at the line 
+
+
+Number of bins
+-
+The bin width (and thus number of categories or ranges) affects the ability of a 
+histogram  Too large, and you will not get enough differentiation. Too small, and the data cannot be grouped.
+
+
+Use of scatter plot 
+-
+Use a scatter plot when you have two variables that pair well together. 
+If you have two variables that pair well together, plotting them on a 
+scatter diagram is a great way to view their relationship and see if it's a positive or negative correlation.
+
+
+What Is a Joint Probability
+-
+Joint probability is a statistical measure that calculates the 
+likelihood of two events occurring together and at the same point in time. 
+Joint probability is the probability of event Y occurring at the same time that event X occurs.
+
+
+confidence interval
+-
+statistics, a confidence interval (CI) is a type of estimate computed from the 
+statistics of the observed data. This gives a range of values for an unknown parameter
+
+
+Difference between histogram and bar graph
+-
+Histograms are used to show distributions of variables while bar charts are used to compare variables. 
+Histograms plot quantitative data with ranges of the data grouped into bins or intervals while bar charts plot categorical data.
+
+Rank 
+-
+Relationship between two set of items
+
+
+AutoCorrelation 
+-
+Autocorrelation is a mathematical representation of the degree of similarity between 
+a given time series and a lagged version of itself over successive time intervals. 
+It's conceptually similar to the correlation between two different time series, but
+autocorrelation uses the same time series twice: once in its original form and once lagged one or more time periods. 
+
+time series data 
+-
+Time series data, also referred to as time-stamped data, is a sequence of data points indexed in time order. Time-stamped is data collected at different points in time. These data points typically consist of successive measurements made from the same source over a time interval and are used to track change over time.

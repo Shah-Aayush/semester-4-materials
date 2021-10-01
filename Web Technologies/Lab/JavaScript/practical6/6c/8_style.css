@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+  font-family: 'Poppins',sans-serif;
+}
+form{ 
+  background: #defcf9;  /* applying bgcolor */
+  padding: 3em 4em 2em; /* applying padding : top,right-left,bottom */
+  max-width: 400px;
+  margin: 5px auto 0;
+  box-shadow: 0 0 1em #845ec2;
+  border-radius: 10px;
+}
+.button {
+  background-color: #bb8ae3;
+  color: white; /* applying color */
+  padding: 16px 20px; /* applying padding */
+  margin: 8px 0;  /* applying margin */
+  border: none; 
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+input[type=text],input[type=password],input[type=email], select, textarea {
+  width: 100%; /* applying full width */
+  padding: 12px; /* applying padding */ 
+  border: 1px solid #bb8ae3; /* border and its color */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+.button:hover {
+  opacity:1;
+}
+#container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+#leftThing {
+  width:100%;
+}

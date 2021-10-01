@@ -1,0 +1,10 @@
+SQL> select * from sales_order where orderstatus IN ('Cancelled','Fullfilled');
+
+ORDERN CLIENT ORDERSTA SALESM D B DELAYDAT ORDERSTATU                                                                                                                                                                                                                                                       
+------ ------ -------- ------ - - -------- ----------                                                                                                                                                                                                                                                       
+O19002 C02    25-01-17 S02    P N 27-01-17 Cancelled                                                                                                                                                                                                                                                        
+O46865 C03    18-02-17 S03    F Y 20-02-17 Fullfilled                                                                                                                                                                                                                                                       
+O19003 C01    03-04-16 S01    F Y 07-04-16 Fullfilled                                                                                                                                                                                                                                                       
+O46866 C04    20-05-16 S04    P N 22-05-16 Cancelled                                                                                                                                                                                                                                                        
+
+SQL> spool off;

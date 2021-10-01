@@ -1,0 +1,19 @@
+SQL> ;
+  1* select * from salesman
+SQL> spool off;
+
+
+SQL> spool /media/sf_DataBase_Management_System/Lab/practical2/sql_spool/13.txt
+SQL> delete from salesman where salamt=3500;
+
+1 row deleted.
+
+SQL> select * from salesman;
+
+SALESM SALESMANNAME	    ADDRESS1			   ADDRESS2		  CITY			  PINCODE STATE 		   SALAMT   TGTTOGET   YTDSALES REMARKS
+------ -------------------- ------------------------------ ------------------------------ -------------------- ---------- -------------------- ---------- ---------- ---------- ------------------------------------------------------------
+S01    Aman		    A/14			   Worli		  Pune			   400002 Maharashtra		     3000	 100	     50 Good
+S02    Omkar		    65				   Nariman		  Pune			   400001 Maharashtra		     3000	 200	    100 Good
+S03    Raj		    P-7 			   Bandra		  Pune			   400032 Maharashtra		     3000	 200	    100 Good
+
+SQL> spool off;

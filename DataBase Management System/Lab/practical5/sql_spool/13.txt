@@ -1,0 +1,14 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select employee_id,first_name as name,salary as monthly_salary,salary/30 as salary_per_day,extract(year from sysdate)-extract(year from hire_date) as experience_in_years from employees where (salary/30)>350
+SQL> /
+
+EMPLOYEE_ID NAME                 MONTHLY_SALARY SALARY_PER_DAY EXPERIENCE_IN_YEARS                                                                                                                                                                                                                          
+----------- -------------------- -------------- -------------- -------------------                                                                                                                                                                                                                          
+        100 Steven                        24000            800                  21                                                                                                                                                                                                                          
+        101 Neena                         17000     566.666667                   9                                                                                                                                                                                                                          
+        102 Lex                           17000     566.666667                   4                                                                                                                                                                                                                          
+        114 Den                           11000     366.666667                  31                                                                                                                                                                                                                          
+
+SQL> spool off;

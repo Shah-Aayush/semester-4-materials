@@ -1,0 +1,8 @@
+ID : 1          VELOCITY :  60         DISTANCE :  611.83
+ID : 2          VELOCITY :  79         DISTANCE :  1060.67
+ID : 3          VELOCITY :  23         DISTANCE :  89.9
+ID : 1          VELOCITY :  34         DISTANCE :  196.47
+ID : 2          VELOCITY :  45         DISTANCE :  344.15
+ID : 2          VELOCITY :  56         DISTANCE :  532.97
+ID : 3          VELOCITY :  78         DISTANCE :  1033.99
+ID : 3          VELOCITY :  98         DISTANCE :  1632.23

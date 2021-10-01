@@ -1,0 +1,13 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1*  select s1.salesmanno,sum(s2.productrate*s2.qtyordered) Total_Amount from sales_order s1 join sales_order_details s2 on s1.orderno=s2.orderno group by s1.salesmanno
+SQL> /
+
+SALESM TOTAL_AMOUNT                                                             
+------ ------------                                                             
+S01           29400                                                             
+S02            5250                                                             
+S03            9450                                                             
+
+SQL> spool off;

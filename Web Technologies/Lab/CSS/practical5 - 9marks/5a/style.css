@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;		 /*include the padding and border in an element's total width and height.*/
+	font-family: 'Poppins',sans-serif;
+}
+section{
+	position: relative;	/*positioned relative to the nearest positioned ancestor*/
+	width: 100%;
+	min-height: 100vh;	/*Relative to 1% of the height of the viewport*/
+	padding: 100px;
+	display: flex;
+	justify-content: space-between; /*used to align the flex items:with space between the lines*/
+	align-items: center;
+	background: #fff;
+}
+header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+header .logo{
+	position: relative;		/*positioned relative to its normal position.*/
+	max-width: 80px;
+}
+header ul{
+	position: relative;
+	display: flex; 
+}
+header ul li{
+	list-style: none;
+}
+header ul li a{
+	display: inline-block;
+	color: #333;
+	font-weight: 400;
+	margin-left: 40px;
+	text-decoration: none;
+}
+.content{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+/*BOX MODEL*/
+.content .textBox{
+	max-width: 600px;
+	margin: 5px;
+	padding: 25px;
+	border: 5px solid;
+	border-color: #3170a4;
+	border-radius: 25px;
+	background: #dae9f5;
+	outline: #ebf0f5 double 10px;
+}
+.content .textBox h2{
+	color: #333;
+	font: 4em;
+	line-height: 1.4em;
+	font-weight: 500;
+}
+.content .textBox h2 span{
+	color: #3170a4;
+	font-size: 1.2em;
+	font-weight: 900;
+}
+.content .textBox p{
+	color: #333;
+	margin-top: 10px;
+}
+/*TEXT FLOW*/
+.content .textBox h3{
+	margin-top: 10px;
+	color: #333;
+	white-space: nowrap; 
+	width: 500px; 
+	overflow: hidden;
+	text-overflow: ellipsis; 
+	border: 1px solid #333;
+}
+.content .textBox h3:hover{
+	width: 500px;
+	white-space: normal; 
+	overflow: visible;
+}
+.content .textBox a{
+	display: inline-block;
+	margin-top: 20px;
+	padding: 8px 20px;
+	background: #3170a4;
+	color: #fff;
+	border-radius: 40px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+.content .imgBox{
+	width: 600px;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 50px;
+	margin-top: 50px;
+}
+.content .imgBox img{
+/*	max-width: 340px;*/
+	width: 600px;
+}
+.sci{
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	flex-direction: column;
+}
+.sci li{
+	list-style: none;
+}
+.sci li	a{
+	display: inline-block;
+	margin: 5px 0; 
+	filter: invert();
+	transform: scale(0.6);
+}
+.circle{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #3170a4;
+	clip-path: circle(600px  at right 800px) ;
+}

@@ -1,0 +1,18 @@
+SQL> select first_name,salary,round(salary,-3)  from employees;
+
+FIRST_NAME               SALARY ROUND(SALARY,-3)                                                                                                                                                                                                                                                            
+-------------------- ---------- ----------------                                                                                                                                                                                                                                                            
+Steven                    24000            24000                                                                                                                                                                                                                                                            
+Neena                     17000            17000                                                                                                                                                                                                                                                            
+Lex                       17000            17000                                                                                                                                                                                                                                                            
+Alexander                  9000             9000                                                                                                                                                                                                                                                            
+Bruce                      6000             6000                                                                                                                                                                                                                                                            
+David                      4800             5000                                                                                                                                                                                                                                                            
+Valli                      4800             5000                                                                                                                                                                                                                                                            
+Den                       11000            11000                                                                                                                                                                                                                                                            
+Karen                      2500             3000                                                                                                                                                                                                                                                            
+William                    8300             8000                                                                                                                                                                                                                                                            
+
+10 rows selected.
+
+SQL> spool off;

@@ -1,0 +1,11 @@
+SQL> select * from product where (sellprice*1.15)>500;
+
+PRODUC DESCRIPTION     PROFITPERCENT UNITMEASUR  QTYONHAND REORDERLVL  SELLPRICE  COSTPRICE                                                                                                                                                                                                                 
+------ --------------- ------------- ---------- ---------- ---------- ---------- ----------                                                                                                                                                                                                                 
+P00001 1.44 Floppies               5 Piece             100         20        525        500                                                                                                                                                                                                                 
+P03453 Monitors                    6 Piece              10          3      12000      11200                                                                                                                                                                                                                 
+P06734 Mouse                       5 Piece              20          5       1050        500                                                                                                                                                                                                                 
+P07865 1.22 Floppies               5 Piece             100         20        525        500                                                                                                                                                                                                                 
+P07868 Keyboards                   2 Piece              10          3       3150       3050                                                                                                                                                                                                                 
+
+SQL> spool off;

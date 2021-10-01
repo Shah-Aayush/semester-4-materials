@@ -1,0 +1,12 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select avg(salary) from employees where job_id like '%CLERK%'
+SQL> 
+SQL> /
+
+AVG(SALARY)                                                                                                                                                                                                                                                                                                 
+-----------                                                                                                                                                                                                                                                                                                 
+       6750                                                                                                                                                                                                                                                                                                 
+
+SQL> spool off;

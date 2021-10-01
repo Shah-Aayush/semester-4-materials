@@ -1,0 +1,18 @@
+SQL> select salary*1.1 from employees;
+
+SALARY*1.1                                                                                                                                                                                                                                                                                                  
+----------                                                                                                                                                                                                                                                                                                  
+     26400                                                                                                                                                                                                                                                                                                  
+     18700                                                                                                                                                                                                                                                                                                  
+     18700                                                                                                                                                                                                                                                                                                  
+      9900                                                                                                                                                                                                                                                                                                  
+      6600                                                                                                                                                                                                                                                                                                  
+      5280                                                                                                                                                                                                                                                                                                  
+      5280                                                                                                                                                                                                                                                                                                  
+     12100                                                                                                                                                                                                                                                                                                  
+      2750                                                                                                                                                                                                                                                                                                  
+      9130                                                                                                                                                                                                                                                                                                  
+
+10 rows selected.
+
+SQL> spool off;

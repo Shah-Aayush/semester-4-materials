@@ -1,0 +1,23 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select first_name,extract(day from hire_date),extract(year from hire_date)
+  2* from employees
+SQL> /
+
+FIRST_NAME           EXTRACT(DAYFROMHIRE_DATE) EXTRACT(YEARFROMHIRE_DATE)                                                                                                                                                                                                                                   
+-------------------- ------------------------- --------------------------                                                                                                                                                                                                                                   
+Steven                                      17                       2000                                                                                                                                                                                                                                   
+Neena                                       18                       2012                                                                                                                                                                                                                                   
+Lex                                         19                       2017                                                                                                                                                                                                                                   
+Alexander                                   20                       2016                                                                                                                                                                                                                                   
+Bruce                                       20                       2014                                                                                                                                                                                                                                   
+David                                       17                       2001                                                                                                                                                                                                                                   
+Valli                                       20                       2001                                                                                                                                                                                                                                   
+Den                                          1                       1990                                                                                                                                                                                                                                   
+Karen                                        6                       1987                                                                                                                                                                                                                                   
+William                                      6                       2005                                                                                                                                                                                                                                   
+
+10 rows selected.                                                                                                                                                                                                                                                                                                  
+
+SQL> spool off;

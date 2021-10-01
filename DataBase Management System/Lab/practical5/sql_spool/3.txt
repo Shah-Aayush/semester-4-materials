@@ -1,0 +1,14 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select department_id,sum(salary) as "dept_wise_salary" from employees group by department_id 
+SQL> /
+
+DEPARTMENT_ID dept_wise_salary                                                                                                                                                                                                                                                                              
+------------- ----------------                                                                                                                                                                                                                                                                              
+           30            13500                                                                                                                                                                                                                                                                              
+           90            58000                                                                                                                                                                                                                                                                              
+          110             8300                                                                                                                                                                                                                                                                              
+           60            24600                                                                                                                                                                                                                                                                              
+
+SQL> spool off;

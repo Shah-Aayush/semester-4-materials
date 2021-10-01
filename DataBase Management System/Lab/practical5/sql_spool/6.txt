@@ -1,0 +1,12 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select department_id,sum(salary) as "min_salary_sum" from employees group by department_id having sum(salary) = (select min(sum(salary)) from employees group by department_id)
+SQL> 
+SQL> /
+
+DEPARTMENT_ID min_salary_sum                                                                                                                                                                                                                                                                                
+------------- --------------                                                                                                                                                                                                                                                                                
+          110           8300                                                                                                                                                                                                                                                                                
+
+SQL> spool off;

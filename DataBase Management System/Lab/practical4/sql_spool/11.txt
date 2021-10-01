@@ -1,0 +1,12 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select distinct job_id from employees  where department_id = 90 and job_id NOT IN (select job_id from employees where department_id = 60)
+SQL> /
+
+JOB_ID                                                                                                                                                                                                                                                                                                      
+----------------------------------------                                                                                                                                                                                                                                                                    
+VICE PRESIDENT                                                                                                                                                                                                                                                                                              
+PRESIDENT                                                                                                                                                                                                                                                                                                   
+
+SQL> spool off;

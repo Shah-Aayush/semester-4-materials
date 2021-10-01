@@ -1,0 +1,18 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select first_name,job_id,salary from employees where job_id = (select job_id from employees where first_name = 'David') or salary > (select salary from employees where first_name = 'Alexander')
+SQL> /
+
+FIRST_NAME           JOB_ID                                       SALARY                                                                                                                                                                                                                                    
+-------------------- ---------------------------------------- ----------                                                                                                                                                                                                                                    
+Steven               PRESIDENT                                     24000                                                                                                                                                                                                                                    
+Neena                VICE PRESIDENT                                17000                                                                                                                                                                                                                                    
+Lex                  VICE PRESIDENT                                17000                                                                                                                                                                                                                                    
+Alexander            IT PROG                                        9000                                                                                                                                                                                                                                    
+David                IT PROG                                        4800                                                                                                                                                                                                                                    
+Den                  SALES CLERK                                   11000                                                                                                                                                                                                                                    
+
+6 rows selected.
+
+SQL> spool off;

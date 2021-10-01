@@ -1,0 +1,18 @@
+SQL> create table sales_order_new as select * from sales_order;
+
+Table created.
+
+SQL> select * from sales_order_new;
+
+ORDERN CLIENT ORDERSTA SALESM D B DELAYDAT ORDERSTATU                                                                                                                                                                                                                                                       
+------ ------ -------- ------ - - -------- ----------                                                                                                                                                                                                                                                       
+O19001 C01    12-01-16 S01    F N 20-01-16 In Process                                                                                                                                                                                                                                                       
+O19002 C02    25-01-17 S02    P N 27-01-17 Cancelled                                                                                                                                                                                                                                                        
+O46865 C03    18-02-17 S03    F Y 20-02-17 Fullfilled                                                                                                                                                                                                                                                       
+O19003 C01    03-04-16 S01    F Y 07-04-16 Fullfilled                                                                                                                                                                                                                                                       
+O46866 C04    20-05-16 S04    P N 22-05-16 Cancelled                                                                                                                                                                                                                                                        
+O19008 C05    24-05-16 S05    F N 26-05-16 In Process                                                                                                                                                                                                                                                       
+
+6 rows selected.
+
+SQL> spool off;

@@ -1,0 +1,62 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* drop table sales_order1
+SQL> ed
+Wrote file afiedt.buf
+
+  1  CREATE TABLE sales_order1(
+  2  orderno varchar2(6) CHECK (orderno LIKE 'O%'),
+  3  clientno varchar2(6),
+  4  orderdate date NOT NULL,
+  5  salesmanno varchar2(6),
+  6  delaytype char(1) CHECK (delaytype='F' OR delaytype='P'),
+  7  billyn char(1),
+  8  delaydate date,
+  9  orderstatus varchar2(10) CHECK (orderstatus IN('In Process','Fulfilled','BackOrder','Cancelled'))
+ 10* )
+SQL> /
+
+Table created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  ALTER TABLE
+  2  sales_order1
+  3* ADD CONSTRAINT PK_sales_order1 PRIMARY KEY(orderno)
+SQL> /
+
+Table altered.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  ALTER TABLE sales_order1
+  2  ADD CONSTRAINT FK_sales_order1
+  3* FOREIGN KEY (clientno) REFERENCES client1(clientno)
+SQL> /
+
+Table altered.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  ALTER TABLE sales_order1
+  2  ADD CONSTRAINT FK_sales_order11
+  3* FOREIGN KEY(salesmanno) REFERENCES salesman1(salesmanno)
+SQL> /
+
+Table altered.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  ALTER TABLE sales_order1
+  2  ADD CONSTRAINT CHK_delaydate
+  3* CHECK(delaydate>=orderdate)
+SQL> /
+
+Table altered.
+
+SQL> spool off;

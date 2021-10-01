@@ -1,0 +1,21 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  CREATE TABLE product1 (
+  2  productno varchar2(6) PRIMARY KEY, 
+  3  description varchar2(15) NOT NULL,
+  4  profitpercent number(4,2) NOT NULL, 
+  5  unitmeasure varchar2(10) NOT NULL, 
+  6  qtyonhand number(8) NOT NULL,
+  7  reorderlvl number(8) NOT NULL,
+  8  sellprice number(8,2) NOT NULL,
+  9  costprice number(8,2) NOT NULL,
+ 10  CHECK (sellprice <>0), 
+ 11  CHECK (costprice <>0),
+ 12  CHECK(productno LIKE 'P%')
+ 13* )
+SQL> /
+
+Table created.
+
+SQL> spool off;

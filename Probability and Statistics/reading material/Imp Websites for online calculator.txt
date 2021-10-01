@@ -1,0 +1,12 @@
+Descriptive Statistics : https://atozmath.com/StatsG.aspx?q=1
+
+AM,GM,HM Calculator without frequency : https://atozmath.com/CONM/AmGmHm.aspx?q=1
+
+Population Variance, Standard deviation and coefficient of variation for ungrouped data : https://atozmath.com/StatsUG.aspx?q=3
+
+Normal Distribution : https://onlinestatbook.com/2/calculators/normal_dist.html
+					https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html
+
+Poisson Distribution : https://homepage.divms.uiowa.edu/~mbognar/applets/pois.html
+
+Binomial Distribution : https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html

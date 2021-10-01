@@ -1,0 +1,16 @@
+SQL> select job_id,avg(salary) as "job_wise_salary" from employees group by job_id;
+
+JOB_ID                                   job_wise_salary                                                                                                                                                                                                                                                    
+---------------------------------------- ---------------                                                                                                                                                                                                                                                    
+FINANCE ACCOUNTANT                                  4800                                                                                                                                                                                                                                                    
+ACCOUNTANT                                          8300                                                                                                                                                                                                                                                    
+VICE PRESIDENT                                     17000                                                                                                                                                                                                                                                    
+IT PROG                                             6900                                                                                                                                                                                                                                                    
+FINANCIAL MANAGER                                   6000                                                                                                                                                                                                                                                    
+SALES CLERK                                        11000                                                                                                                                                                                                                                                    
+CLERK                                               2500                                                                                                                                                                                                                                                    
+PRESIDENT                                          24000                                                                                                                                                                                                                                                    
+
+8 rows selected.
+
+SQL> spool off;

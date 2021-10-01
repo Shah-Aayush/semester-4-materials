@@ -1,0 +1,13 @@
+SQL> ;
+  1* select first_name,job_id from employees where job_id = (select job_id from employees where first_name = 'David') and first_name != 'David'
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select first_name,job_id from employees where job_id = (select job_id from employees where first_name = 'David') and first_name != 'David'
+SQL> /
+
+FIRST_NAME           JOB_ID                                                                                                                                                                                                                                                                                 
+-------------------- ----------------------------------------                                                                                                                                                                                                                                               
+Alexander            IT PROG                                                                                                                                                                                                                                                                                
+
+SQL> spool off;

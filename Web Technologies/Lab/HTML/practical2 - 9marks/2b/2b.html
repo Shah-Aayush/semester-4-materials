@@ -1,0 +1,18 @@
+<!--Create an HTML page which contains the two frames using frameset tag. One frame contains navigation links for web pages and the second frame displays the information about the respective web page when the navigation link of a particular web page is clicked. Refer the following figure for more detail.-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>practical 2b</title>
+	</head>
+		<frameset cols = "20%,80%" border=5>
+			<frame name = "left" src="./left.html"/>
+			<frame name = "right"/>
+			
+			<noframes>
+				<body>
+					Your browser does not support frames.
+				</body>
+			</noframes>
+		</frameset>
+</html>

@@ -1,0 +1,20 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select employee_id,first_name as name,hire_date from employees where extract(year from hire_date) <> '2001'
+SQL> /
+
+EMPLOYEE_ID NAME                 HIRE_DAT                                                                                                                                                                                                                                                                   
+----------- -------------------- --------                                                                                                                                                                                                                                                                   
+        100 Steven               17-06-00                                                                                                                                                                                                                                                                   
+        101 Neena                18-06-12                                                                                                                                                                                                                                                                   
+        102 Lex                  19-06-17                                                                                                                                                                                                                                                                   
+        103 Alexander            20-05-16                                                                                                                                                                                                                                                                   
+        104 Bruce                20-05-14                                                                                                                                                                                                                                                                   
+        114 Den                  01-09-90                                                                                                                                                                                                                                                                   
+        119 Karen                06-07-87                                                                                                                                                                                                                                                                   
+        206 William              06-07-05                                                                                                                                                                                                                                                                   
+
+8 rows selected.
+
+SQL> spool off;

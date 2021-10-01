@@ -1,0 +1,13 @@
+ • student
+roll no int //corrected
+email varchar //corrected
+
+ • attendance
+login time!=logout time //corrected
+
+ • result
+result varchar (pass/fail) - char enter nathi thato...even though varchar karyu //corrected
+result no int only pass fail //corrected
+
+ • branch
+branch name no numbers //corrected

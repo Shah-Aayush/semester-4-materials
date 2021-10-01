@@ -1,0 +1,24 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT first_name,last_name,salary,
+  2      nvl(to_char(commission_pct), 'NO_COMMISSION' )
+  3* FROM employees
+SQL> /
+
+FIRST_NAME           LAST_NAME                     SALARY NVL(TO_CHAR(COMMISSION_PCT),'NO_COMMISSI                                                                                                                                                                                                          
+-------------------- ------------------------- ---------- ----------------------------------------                                                                                                                                                                                                          
+Steven               King                           24000 NO_COMMISSION                                                                                                                                                                                                                                     
+Neena                Kochhar                        17000 0                                                                                                                                                                                                                                                 
+Lex                  De Haan                        17000 NO_COMMISSION                                                                                                                                                                                                                                     
+Alexander            Hunold                          9000 NO_COMMISSION                                                                                                                                                                                                                                     
+Bruce                Ernst                           6000 0                                                                                                                                                                                                                                                 
+David                Austin                          4800 0                                                                                                                                                                                                                                                 
+Valli                Pataballa                       4800 0                                                                                                                                                                                                                                                 
+Den                  Raphaely                       11000 0                                                                                                                                                                                                                                                 
+Karen                Colmenares                      2500 NO_COMMISSION                                                                                                                                                                                                                                     
+William              Gietz                           8300 NO_COMMISSION                                                                                                                                                                                                                                     
+
+10 rows selected.
+
+SQL> spool off;

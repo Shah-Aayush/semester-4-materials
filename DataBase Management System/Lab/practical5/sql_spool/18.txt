@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select floor(avg(experience)) as floor_avg_exp_in_years, ceil(avg(experience)) as ceil_avg_exp_in_years from (select extract(year from sysdate) - extract(year from hire_date) as experience from employees where job_id like '%CLERK%')
+SQL> /
+
+FLOOR_AVG_EXP_IN_YEARS CEIL_AVG_EXP_IN_YEARS                                                                                                                                                                                                                                                                
+---------------------- ---------------------                                                                                                                                                                                                                                                                
+                    32                    33                                                                                                                                                                                                                                                                
+
+SQL> spool off;

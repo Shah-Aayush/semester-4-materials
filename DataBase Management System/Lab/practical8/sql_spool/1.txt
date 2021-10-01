@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select p.first_name, p.salary from employees p where p.salary > (select s.salary from employees s where s.first_name='Lex')
+SQL> /
+
+FIRST_NAME               SALARY                                                                                                                                                                                                                                                                             
+-------------------- ----------                                                                                                                                                                                                                                                                             
+Steven                    24000                                                                                                                                                                                                                                                                             
+
+SQL> spool off;

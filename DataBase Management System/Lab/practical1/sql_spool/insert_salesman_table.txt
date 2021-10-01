@@ -1,0 +1,38 @@
+SQL> desc salesman;
+ Name                                                                                                                                                                          Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------------------------------------------------------
+ SALESMANNO                                                                                                                                                                             VARCHAR2(6)
+ SALESMANNAME                                                                                                                                                                           VARCHAR2(20)
+ ADDRESS1                                                                                                                                                                               VARCHAR2(30)
+ ADDRESS2                                                                                                                                                                               VARCHAR2(30)
+ CITY                                                                                                                                                                                   VARCHAR2(20)
+ PINCODE                                                                                                                                                                                NUMBER(8)
+ STATE                                                                                                                                                                                  VARCHAR2(20)
+ SALAMT                                                                                                                                                                                 NUMBER(8,2)
+ TGTTOGET                                                                                                                                                                               NUMBER(6,2)
+ YTDSALES                                                                                                                                                                               NUMBER(6,2)
+ REMARKS                                                                                                                                                                                VARCHAR2(60)
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  insert all 
+  2  into salesman(salesmanno,salesmanname,address1,address2,city,pincode,state,salamt,tgttoget,ytdsales,remarks) values ('S01', 'Aman', 'A/14', 'Worli', 'Mumbai', 400002,'Maharashtra',3000,100,50,'Good') 
+  3  into salesman(salesmanno,salesmanname,address1,address2,city,pincode,state,salamt,tgttoget,ytdsales,remarks) values ('S02', 'Omkar', '65', 'Nariman', 'Mumbai', 400001,'Maharashtra',3000,200,100,'Good')  
+  4  into salesman(salesmanno,salesmanname,address1,address2,city,pincode,state,salamt,tgttoget,ytdsales,remarks) values ('S03', 'Raj', 'P-7', 'Bandra', 'Mumbai', 400032,'Maharashtra',3000,200,100,'Good') 
+  5  into salesman(salesmanno,salesmanname,address1,address2,city,pincode,state,salamt,tgttoget,ytdsales,remarks) values ('S04', 'Ashish', 'A/5', 'Juhu', 'Mumbai', 400044,'Maharashtra',3500,200,150,'Good') 
+  6* select * from dual 
+SQL> /
+
+4 rows created.
+
+SQL> select * from salesman;
+
+SALESM SALESMANNAME         ADDRESS1                       ADDRESS2                       CITY                    PINCODE STATE                    SALAMT   TGTTOGET   YTDSALES REMARKS                                                                                                                     
+------ -------------------- ------------------------------ ------------------------------ -------------------- ---------- -------------------- ---------- ---------- ---------- ------------------------------------------------------------                                                                
+S01    Aman                 A/14                           Worli                          Mumbai                   400002 Maharashtra                3000        100         50 Good                                                                                                                        
+S02    Omkar                65                             Nariman                        Mumbai                   400001 Maharashtra                3000        200        100 Good                                                                                                                        
+S03    Raj                  P-7                            Bandra                         Mumbai                   400032 Maharashtra                3000        200        100 Good                                                                                                                        
+S04    Ashish               A/5                            Juhu                           Mumbai                   400044 Maharashtra                3500        200        150 Good                                                                                                                        
+
+SQL> spool off;

@@ -1,0 +1,20 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from employees where hire_date<(select max(hire_date) from employees where manager_id=(select employee_id from employees where first_name='Lex'))
+SQL> /
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                 EMAIL                     PHONE_NUMBER         HIRE_DAT JOB_ID                                       SALARY COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                                                                              
+----------- -------------------- ------------------------- ------------------------- -------------------- -------- ---------------------------------------- ---------- -------------- ---------- -------------                                                                                              
+        100 Steven               King                      SKING                     515.123.4567         17-06-00 PRESIDENT                                     24000                       103            90                                                                                              
+        101 Neena                Kochhar                   NKOCHHAR                  515.123.4568         18-06-12 VICE PRESIDENT                                17000              0        100            90                                                                                              
+        104 Bruce                Ernst                     BERNST                    590.423.4568         20-05-14 FINANCIAL MANAGER                              6000              0        103            60                                                                                              
+        105 David                Austin                    DAUSTIN                   590.423.4569         17-09-01 IT PROG                                        4800              0        103            60                                                                                              
+        106 Valli                Pataballa                 VPATABAL                  590.423.4560         20-09-01 FINANCE ACCOUNTANT                             4800              0        103            60                                                                                              
+        114 Den                  Raphaely                  DRAPHEAL                  515.127.4561         01-09-90 SALES CLERK                                   11000              0        100            30                                                                                              
+        119 Karen                Colmenares                KCOLMENA                  515.127.4566         06-07-87 CLERK                                          2500                       114            30                                                                                              
+        206 William              Gietz                     WGIETZ                    515.123.8181         06-07-05 ACCOUNTANT                                     8300                       205           110                                                                                              
+
+8 rows selected.
+
+SQL> spool off;

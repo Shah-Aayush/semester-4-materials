@@ -1,0 +1,5 @@
+SQL> rename salesman to sman;
+
+Table renamed.
+
+SQL> spool off;

@@ -1,0 +1,16 @@
+SQL> alter table client add(Telephone number(10));
+
+Table altered.
+
+SQL> desc client;
+ Name                                                                                                                                                                          Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------------------------------------------------------
+ CLIENTNO                                                                                                                                                                               VARCHAR2(6)
+ NAME                                                                                                                                                                                   VARCHAR2(20)
+ CITY                                                                                                                                                                                   VARCHAR2(15)
+ PINCODE                                                                                                                                                                                NUMBER(8)
+ STATE                                                                                                                                                                                  VARCHAR2(15)
+ BALDUE                                                                                                                                                                                 NUMBER(10,5)
+ TELEPHONE                                                                                                                                                                              NUMBER(10)
+
+SQL> spool  off;

@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select productno, description,sellprice from (select * from product order by sellprice desc) where rownum = 1
+SQL> /
+
+PRODUC DESCRIPTION      SELLPRICE                                                                                                                                                                                                                                                                           
+------ --------------- ----------                                                                                                                                                                                                                                                                           
+P03453 Monitors             12000                                                                                                                                                                                                                                                                           
+
+SQL> spool off;

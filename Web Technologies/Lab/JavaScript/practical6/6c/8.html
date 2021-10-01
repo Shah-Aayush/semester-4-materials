@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<!--
+	
+	Design the web page that includes the various types of JavaScript validations like
+i) IP address 												[DONE]		
+ii) Alphanumeric values only 								[done in middle name]
+iii) Date in DD/MM/YYYY format								[done in date]
+iv) Special symbol restriction								[done]
+v) Email must be in proper form. 							[DONE with regex]
+vi) Phone number should be minimum of 10 digits				[DONE with js]
+vii) Required field validation 								[DONE in middle name with required]
+viii) Password and retype password must be same 			[DONE in password and repassword]
+
+-->
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="./8_style.css">
+	<script src="./8_script.js">//JAVASCRIPT for form validation :</script>
+</head>
+
+<body bgcolor=#cadefc>
+	<h1 style="white-space: nowrap;" align="center">
+		<font color="#383e56">VALIDATION FORM</font>
+	</h1>
+	<br>
+	<div id="container">
+
+		<div id="leftThing">
+			<!-- INPUT -->
+			<form id="registrationForm" method="post" onsubmit="return validateForm()">
+
+				<label> First name : &nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="firstname" size="15" placeholder="Aayush" maxlength="20" id="first_name"
+					ng-model="student.first_name" /> <br> <br>
+				<label> Middle name : </label>
+				<input type="text" name="middlename" size="15" placeholder="Umeshbhai" id="middle_name" required/> <br> <br>
+				<label> Last name : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="text" name="lastname" size="15" placeholder="Shah" id="last_name" /> <br> <br>
+				<label> Date of Birth : </label>
+				<input type="text" name="lastname" size="15" id="date" placeholder="08/12/2000"/> <br> <br>
+
+	
+				<label>Phone number : </label>
+				<!--			<input type="text" name="country code"  value="91" size="2" style="width: 40px;"/>   -->
+				<input type="text" name="phone" size="10" minlength="10" placeholder="9898123123" id="phone-number"/> <br> <br>
+				Address :
+				<br>
+				<input type="text" placeholder="Enter your IP address here" id="ip-address"></input>
+				<br> <br>
+				<label>Email: <label>
+						<br>
+						<input type="email" id="email" name="email" placeholder="19BCE245@nirmauni.ac.in" /> <br>
+						<br>
+						Password: <br>
+						<input type="Password" name="pass" placeholder="Str0ngP@ss123" id="password"> <br>
+						<br>
+						Re-type password: <br>
+						<input type="Password" name="repass" placeholder="Str0ngP@ss123" id="rePassword"> <br> <br>
+						<pre><input type="Submit" value="Submit" form="registrationForm" class="button"/>&nbsp;&nbsp;<input type="Reset" value="Reset" form="registrationForm" class="button">	</pre>
+			</form>
+		</div>
+
+
+
+	</div>
+
+
+</body>
+
+</html>

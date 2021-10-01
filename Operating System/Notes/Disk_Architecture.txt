@@ -1,0 +1,23 @@
+HARD DISK ARCHITECTURE
+	Platters -> Surface -> Track -> Sector -> Data
+	Disk size = Platters * 2 * Surface * Track * Sector * Data	[each platter has by default 2 surface/heads]
+	No of bites required to represent disk size = Log2(Disk size)
+	
+	1K = 2^10
+	1M = 2^20
+	1G = 2^30
+	1T = 2^40
+
+Each platter has by default two heads/surface.
+Spindel is used to move disk in clock wise/anti click wise direction.
+
+DISK ACCESS TIME 
+	Seek time : Time taken by R/W head to reach desired track.
+	Rotation time :  Time taken for one full rotation (360)
+	Rotational Latency : Time taken to reach to desired sector. (half of rotation time)
+	Transfer Time : Data to be transfer/ Transfer rate;
+	Transfer rate (Data rate) :  No. of heads(or surface) * Capacity of one track(data size in track) * No. of Rotations in one second (if given in RPM then convert it in RPS by dividing the 60 by RPM : 3000 RPM ~ 60/3000 RPS)
+	
+	Disk access time : Seek time + Rotational Latency + Transfer time + Controller time (if given) + Queue time (if given)
+	If any one is not given then you can consider it as ZERO.
+	

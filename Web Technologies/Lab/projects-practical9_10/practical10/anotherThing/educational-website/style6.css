@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+a.active {
+    /* border-radius: 20px; */
+    border-bottom: 2px solid #c3073f;
+}
+.header {
+    width: 100%;
+    position: relative;
+    background-color: #1a1a1d;
+}
+.logo img {
+    height: 70px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 30px;
+    background-color: #1a1a1d;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+nav ul {
+    display: flex;
+    margin: 0px;
+    padding: 0px;    
+}
+nav ul li a {
+    color: white;
+    height: 40px;
+    line-height: 43px;
+    margin: 8px;
+    padding: 0px 10px;
+    display: flex;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    /* color: #111111; */
+    letter-spacing: 1px;
+    transition: all 0.1s ease-in;
+}
+nav ul li a:hover {
+    /* border-radius: 20px; */
+    border-bottom: 2px solid #c3073f;
+}
+.active {
+    /* border-radius: 20px; */
+    border-bottom: 2px solid #c3073f;
+}
+.top-name {
+    margin-top: 90px;
+    background-color: #1a1a1d;
+    color: white;
+}
+.top-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.text-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+/*   shivam panchal */
+}
+.top-table {
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+    background-color: #c3073f;
+}
+table {
+    margin-bottom: 30px;
+    color: black;
+}
+.top-table table {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 10px 8px #1a1a1d;
+    transition: all 0.1s linear;
+}
+.top-table table:hover {
+    transform: scale(1.02);
+}
+.top-table td {
+    padding: 20px;
+    text-align: center;
+}
+.top-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #1a1a1d;
+    background-color: #1a1a1d;
+    color: white;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 0;
+    transition: all 0.2s linear;
+}
+.custom-file-upload:hover {
+    background-color: white;
+    color: black;
+/*   aayush shah */
+/*   ansh ray */
+/*   shivam panchal */
+/*   preet patel  */
+}
+

@@ -1,0 +1,9 @@
+SQL> select salesmanname from salesman where salamt=3000;
+
+SALESMANNAME                                                                                                                                                                                                                                                                                                
+--------------------                                                                                                                                                                                                                                                                                        
+Aman                                                                                                                                                                                                                                                                                                        
+Omkar                                                                                                                                                                                                                                                                                                       
+Raj                                                                                                                                                                                                                                                                                                         
+
+SQL> spool off;

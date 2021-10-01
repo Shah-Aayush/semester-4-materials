@@ -1,0 +1,70 @@
+import tkinter as tk
+
+
+class BranchAdd:
+    def __init__(self, top=None):
+        top.geometry("342x139+527+141")
+        top.minsize(120, 1)
+        top.maxsize(1370, 749)
+        top.resizable(1,  1)
+        top.title("Add")
+        top.configure(background="#CED4DA")
+
+        self.id_label = tk.Label(top)
+        self.id_label.place(relx=0.234, rely=0.144, height=17, width=74)
+        self.id_label.configure(background="#CED4DA")
+        self.id_label.configure(disabledforeground="#a3a3a3")
+        self.id_label.configure(foreground="#000000")
+        self.id_label.configure(text='''Branch id :''')
+
+        self.name_label = tk.Label(top)
+        self.name_label.place(relx=0.187, rely=0.36, height=17, width=84)
+        self.name_label.configure(background="#CED4DA")
+        self.name_label.configure(disabledforeground="#a3a3a3")
+        self.name_label.configure(foreground="#000000")
+        self.name_label.configure(text='''Branch name :''')
+
+        self.id_entry = tk.Entry(top)
+        self.id_entry.place(relx=0.468, rely=0.144, height=20, relwidth=0.304)
+        self.id_entry.configure(background="white")
+        self.id_entry.configure(disabledforeground="#a3a3a3")
+        self.id_entry.configure(font="TkFixedFont")
+        self.id_entry.configure(foreground="#000000")
+        self.id_entry.configure(insertbackground="black")
+
+        self.name_entry = tk.Entry(top)
+        self.name_entry.place(relx=0.468, rely=0.36, height=20, relwidth=0.304)
+        self.name_entry.configure(background="white")
+        self.name_entry.configure(disabledforeground="#a3a3a3")
+        self.name_entry.configure(font="TkFixedFont")
+        self.name_entry.configure(foreground="#000000")
+        self.name_entry.configure(insertbackground="black")
+
+        self.back_button = tk.Button(top)
+        self.back_button.place(relx=0.146, rely=0.647, height=24, width=87)
+        self.back_button.configure(activebackground="#ececec")
+        self.back_button.configure(activeforeground="#000000")
+        self.back_button.configure(background="#E9ECEF")
+        self.back_button.configure(disabledforeground="#a3a3a3")
+        self.back_button.configure(foreground="#000000")
+        self.back_button.configure(highlightbackground="#d9d9d9")
+        self.back_button.configure(highlightcolor="black")
+        self.back_button.configure(pady="0")
+        self.back_button.configure(text='''Back''')
+
+        self.add_button = tk.Button(top)
+        self.add_button.place(relx=0.556, rely=0.647, height=24, width=87)
+        self.add_button.configure(activebackground="#ececec")
+        self.add_button.configure(activeforeground="#000000")
+        self.add_button.configure(background="#E9ECEF")
+        self.add_button.configure(disabledforeground="#a3a3a3")
+        self.add_button.configure(foreground="#000000")
+        self.add_button.configure(highlightbackground="#d9d9d9")
+        self.add_button.configure(highlightcolor="black")
+        self.add_button.configure(pady="0")
+        self.add_button.configure(text='''Add''')
+
+
+root = tk.Tk()
+top = BranchAdd(root)
+root.mainloop()

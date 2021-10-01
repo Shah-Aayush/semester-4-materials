@@ -1,0 +1,7 @@
+How to edit file using command such that every lines except line 1 will get deleted
+hi I am aayush shah
+this is line 1
+this is line 2
+this is line 3
+thank you bro:)
+ok byeeee

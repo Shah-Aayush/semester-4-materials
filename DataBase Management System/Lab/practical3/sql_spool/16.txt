@@ -1,0 +1,23 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select first_name,last_name,nvl(commission_pct,0)
+  2* from employees
+SQL> /
+
+FIRST_NAME           LAST_NAME                 NVL(COMMISSION_PCT,0)                                                                                                                                                                                                                                        
+-------------------- ------------------------- ---------------------                                                                                                                                                                                                                                        
+Steven               King                                          0                                                                                                                                                                                                                                        
+Neena                Kochhar                                       0                                                                                                                                                                                                                                        
+Lex                  De Haan                                       0                                                                                                                                                                                                                                        
+Alexander            Hunold                                        0                                                                                                                                                                                                                                        
+Bruce                Ernst                                         0                                                                                                                                                                                                                                        
+David                Austin                                        0                                                                                                                                                                                                                                        
+Valli                Pataballa                                     0                                                                                                                                                                                                                                        
+Den                  Raphaely                                      0                                                                                                                                                                                                                                        
+Karen                Colmenares                                    0                                                                                                                                                                                                                                        
+William              Gietz                                         0                                                                                                                                                                                                                                        
+
+10 rows selected.
+
+SQL> spool off;

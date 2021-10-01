@@ -1,0 +1,16 @@
+SQL> select first_name from employees where floor(months_between(sysdate,hire_date)/12)>5;
+
+FIRST_NAME                                                                                                                                                                                                                                                                                                  
+--------------------                                                                                                                                                                                                                                                                                        
+Steven                                                                                                                                                                                                                                                                                                      
+Neena                                                                                                                                                                                                                                                                                                       
+Bruce                                                                                                                                                                                                                                                                                                       
+David                                                                                                                                                                                                                                                                                                       
+Valli                                                                                                                                                                                                                                                                                                       
+Den                                                                                                                                                                                                                                                                                                         
+Karen                                                                                                                                                                                                                                                                                                       
+William                                                                                                                                                                                                                                                                                                     
+
+8 rows selected.
+
+SQL> spool  off;

@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select employee_id,first_name,salary,job_id,department_id from employees where job_id = 'IT PROG' and salary * 12 >80000 order by department_id ASC
+SQL> /
+
+EMPLOYEE_ID FIRST_NAME               SALARY JOB_ID                                   DEPARTMENT_ID                                                                                                                                                                                                          
+----------- -------------------- ---------- ---------------------------------------- -------------                                                                                                                                                                                                          
+        103 Alexander                  9000 IT PROG                                             60                                                                                                                                                                                                          
+
+SQL> spool off;

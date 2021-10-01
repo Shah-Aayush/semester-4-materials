@@ -1,0 +1,29 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT first_name,last_name,salary, CASE 
+  2  WHEN salary BETWEEN 0 and 5000 THEN 'A'
+  3  WHEN salary BETWEEN 5001 and 15000 THEN 'B'
+  4  WHEN salary BETWEEN 15001 and 20000 THEN 'C'
+  5  WHEN salary>20000 or salary<0 THEN 'D'
+  6  END
+  7  salary_grad
+  8* from employees
+SQL> /
+
+FIRST_NAME           LAST_NAME                     SALARY S                     
+-------------------- ------------------------- ---------- -                     
+Steven               King                           24000 D                     
+Neena                Kochhar                        17000 C                     
+Lex                  De Haan                        17000 C                     
+Alexander            Hunold                          9000 B                     
+Bruce                Ernst                           6000 B                     
+David                Austin                          4800 A                     
+Valli                Pataballa                       4800 A                     
+Den                  Raphaely                       11000 B                     
+Karen                Colmenares                      2500 A                     
+William              Gietz                           8300 B                     
+
+10 rows selected.
+
+SQL> spool off;

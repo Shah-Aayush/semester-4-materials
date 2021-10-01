@@ -1,0 +1,17 @@
+SQL> create table order_details as select * from sales_order_details where 1=2;
+
+Table created.
+
+SQL> select * from order_details;
+
+no rows selected
+
+SQL> desc order_details;
+ Name                                                                                                                                                                          Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------------------------------------------------------
+ ORDERNO                                                                                                                                                                                VARCHAR2(6)
+ PRODUCTNO                                                                                                                                                                              VARCHAR2(6)
+ QTYORDERED                                                                                                                                                                             NUMBER(8)
+ PRODUCTRATE                                                                                                                                                                            NUMBER(10,2)
+
+SQL> spool off;

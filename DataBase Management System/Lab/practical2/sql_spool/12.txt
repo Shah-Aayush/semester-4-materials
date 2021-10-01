@@ -1,0 +1,11 @@
+SQL> update salesman set city='Pune';
+4 rows updated.
+SQL> select salesmanname,city from salesman;
+SALESMANNAME         CITY                                                       
+-------------------- --------------------                                       
+Aman                 Pune                                                       
+Omkar                Pune                                                       
+Raj                  Pune                                                       
+Ashish               Pune                                                       
+SQL> spool off;
+->This will change all salesman's city from Mumbai to Pune. not  only a specific salesman. So If we want to set the city of only one salesman then we must have to write a condition for name of the salesman in WHERE clause.

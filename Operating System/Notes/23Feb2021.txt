@@ -1,0 +1,40 @@
+JNE = Jump if Not Zero
+RET  
+
+enter_region:
+	TSL REGISTER,LOCK
+	
+Exchange Instruction
+	enter_region:
+		MOVE REGISTER,#1 	|put 1 in the register
+		XCHG(exchange) REGISTER,LOCK |swap content of register & lock variable
+		CMP REGISTER,#0 | was lock variable 0?
+		JNE(jump if not zero) enter_region
+		RET(return entered test) | return to caller, critical region entered
+	leave_region:
+		move_lock
+		
+2.3 tennabuam.
+
+#define FALSE 0
+#define TRUE 1
+#define N 2 		// number of process
+int turn;			//whose turn is it?
+int interested[N];	//all values initially 0(FALSE)
+
+void enter_region(int process){
+	int other; // number of the other process
+	other = 1 - process;		//number of the other process
+	interested[process] = TRUE;		//the opposite process	
+	turn = process;			//set flag
+	while(turn == process && interested[other] == TRUE);	//wait
+}
+
+void leave_region(int process){
+	interested[process] = FALSE;
+}
+
+PRIORITY INVERSION problem [disadv. of peterson problem]
+priority inversion means the execution of a high pr
+RED = lower priority
+GREEN = higher priority

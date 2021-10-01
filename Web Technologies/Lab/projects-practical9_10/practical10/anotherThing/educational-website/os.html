@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ico -->
+    <link rel="icon" href="./images/moodle-logo.png">
+    <title>Operating System</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+/*   shivam panchal     */
+        .colortext {
+            color: #c3073f;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', () => {
+            const choice = sessionStorage.getItem('Choice');
+            if (choice == '1') {
+                const name = sessionStorage.getItem('Name')[0].toUpperCase() + sessionStorage.getItem('Name').slice(1);
+                const email = sessionStorage.getItem('Email');
+                const password = sessionStorage.getItem('Password');
+                document.getElementById('account_name_content').textContent = name;
+                document.getElementById('logged_in').textContent = 'You are logged in as : ';
+                document.getElementById('logged_in_name').textContent = name + ' | ' + email.split('@')[0];
+                mainName = name;
+            }
+            else if (choice == '2') {
+                const email = sessionStorage.getItem('Email');
+                const password = sessionStorage.getItem('Password');
+                const name = email.split("@")[0][0].toUpperCase() + email.split("@")[0].slice(1);
+                document.getElementById('account_name_content').innerHTML = name;
+                document.getElementById('logged_in').textContent = 'You are logged in as : ';
+                document.getElementById('logged_in_name').textContent = ' ' + email.split('@')[0];
+                mainName = name;
+            }
+            mainChoice = choice;
+        })
+    </script>
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="https://nirmauni.ac.in/" class="logo">
+                <img src="./images/volti1.png">
+            </a>
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a class="" href="#syllabus">Syllabus</a></li>
+                <li><a class="" href="#books">Books</a></li>
+                <li><a class="" href="#events">Events</a></li>
+                <li>
+                    <a class="" href="#Account" id="account_name" onclick="logout_option()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill:rgb(255, 255, 255);margin-top: 7px;margin-right: 10px;">
+                            <path
+                                d="M12,2C6.579,2,2,6.579,2,12s4.579,10,10,10s10-4.579,10-10S17.421,2,12,2z M12,7c1.727,0,3,1.272,3,3s-1.273,3-3,3 c-1.726,0-3-1.272-3-3S10.274,7,12,7z M6.894,16.772c0.897-1.32,2.393-2.2,4.106-2.2h2c1.714,0,3.209,0.88,4.106,2.2 C15.828,18.14,14.015,19,12,19S8.172,18.14,6.894,16.772z">
+                            </path>
+                        </svg>
+                        <p id="account_name_content" style="display: inline; color: aqua; margin: 0px; ">Account
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-content">
+            <div class="header-text">
+                <p>Your Courses > Operating System </p>
+                <h1><span class="colortext">Moodle</span> - Operating System</h1>
+                <p>
+                    This course teaches the basic operating system abstractions, mechanisms, and their implementations.
+                    All the features of this course are available for free. It does offer a certificate upon completion.
+                </p>
+<!--          shivam panchal      -->
+                <a href="" class="header-btn">
+                    Continue Watching
+                </a>
+                <p style="font-weight: bold;">
+                    Instructor - <span class="colortext">PQR STU</span>
+                </p>
+                <p>
+                    1,00,00+ already enrolled
+                </p>
+            </div>
+            <div class="header-image">
+                <img src="./images/os.png">
+            </div>
+        </div>
+    </section>
+    <div id="syllabus"></div>
+    <div class="margin-class"></div>
+    <div class="margin-class"></div>
+    <section>
+        <div class="outer-container">
+            <div class="syllabus common-class">
+                <div class="text-syllabus">
+                    <center>
+                        <h2 style="color: black;">Syllabus</h2>
+                    </center>
+                    <ul>
+                        <li>Introduction</li>
+                        <li>Navigating the System</li>
+                        <li>Package and Software Management</li>
+                        <li>Filesystems</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="benefits commom-class">
+                <center>
+                    <h2>Learner Career Outcomes</h2>
+                </center>
+                <div class="about-outer" style="background-color: white;">
+                    <div class="icon">
+                        <img src="./images/book.png">
+                    </div>
+                    <div class="text">
+                        <h2 style="color: black;">40%</h2>
+                        <p style="color: #c3073f; font-weight: bold;">
+                            Got a tangible career benefit from this course
+                        </p>
+                    </div>
+                </div>
+                <div class="about-outer" style="padding-bottom: 5px; background-color: white;">
+                    <div class="icon">
+                        <img src="./images/document.png">
+                    </div>
+                    <div class="text">
+                        <h2 style="color: black;">33%</h2>
+                        <p style="color: #c3073f ; font-weight: bold;">
+                            started a new career after completing these courses
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="books"></div>
+    <div class="margin-class"></div>
+    <section class="book-suggestion">
+        <center>
+            <h2 style="color: #c3073f; padding-top: 40px; font-size: 2.5rem;">Suggested Practice Books</h2>
+            <div class="outer2-container">
+                <div class="product">
+                    <div class="product-header">
+                        <img src="./images/os-1.jpg">
+                    </div>
+                    <div class="product-footer">
+                        <p>
+                        <h3>Book - 1</h3>
+                        </p>
+                        <p class="price">₹100</p>
+                        <p><button class="cart-button">Popular</button></p>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-header">
+                        <img src="./images/os-2.jpg">
+                    </div>
+                    <div class="product-footer">
+                        <p>
+                        <h3>Book - 2</h3>
+                        </p>
+                        <p class="price">₹150</p>
+                        <p><button class="cart-button">Popular</button></p>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-header">
+                        <img src="./images/os-3.jpg">
+                    </div>
+                    <div class="product-footer">
+                        <p>
+                        <h3>Book - 3</h3>
+                        </p>
+                        <p class="price">₹170</p>
+                        <p><button class="cart-button">Popular</button></p>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-header">
+                        <img src="./images/os-4.jpg">
+                    </div>
+                    <div class="product-footer">
+                        <p>
+                        <h3>Book - 4</h3>
+                        </p>
+                        <p class="price">₹350</p>
+                        <p><button class="cart-button">Popular</button></p>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </section>
+</body>
+
+</html>

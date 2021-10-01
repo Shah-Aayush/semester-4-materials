@@ -1,0 +1,33 @@
+tS = Seek time 
+tT = Transfer time
+S = seek times
+B = number of blocks
+b = number of blocks containing matching records
+hi = height of tree structure
+
+> Disk I/O cost = (S * tS) + (B * tT)
+
+File Scan
+	A1 | Linear Search
+	> cost = tS + (B * tT)
+		selection is on key attribute : 
+		>cost = tS + (B/2)*tT
+	
+	Binary Search
+	> cost = log2(B) * (tS + tT)
+	
+Selections using indices
+	Index Scan
+	A2 | (primary index, equality on key)
+	> cost = (hi + 1) * (tS + tT)
+	
+	A3 | (primary index, equality on nonkey)
+	> cost = hi*(tT + tS) + tS + tT*b
+
+	A4 | (secondary index, equality on key)
+	> cost = (hi + 1 + 1) * (tT + tS)
+	
+	A4 | (secondary index, equality on nonkey)
+	> cost = (hi + n) * (tT + tS)
+	
+	

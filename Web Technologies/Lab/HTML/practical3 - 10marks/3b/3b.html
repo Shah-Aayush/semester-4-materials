@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--Create a webpage for on-line student registration form using HTML-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Student Registration Form</title>
+	</head>
+	<body bgcolor="Lightskyblue">  
+		<h1 align="center"><font color="#123456">STUDENT REGISTRATION FORM</font></h1>
+		<br>  
+		<br>  
+		<form id="registrationForm" action="./onSubmit.html" method="post">  
+<!--	Defining method as post will not change the url as per form data but get method will do.		-->
+			
+			<label > First name : &nbsp;&nbsp;&nbsp;</label>
+			<input type="text" name="firstname" size="15" value="Aayush" maxlength="20"/> <br> <br>
+			<label> Middle name : </label>
+			<input type="text" name="middlename" size="15"/> <br> <br>  
+			<label> Last name : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+			<input type="text" name="lastname" size="15"/> <br> <br>  
+			<label> Date of Birth : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+			<input type="date" name="lastname" size="15"/> <br> <br>  
+			
+			<label>   
+				Course :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</label>   
+			<select>
+<!--			<select multiple>-->
+<!--			include multiple for selecting multiple options	-->
+				<option selected disabled>Select course</option>
+				<option value="Course">Course</option>  
+				<option value="BCA">BCA</option>  
+				<option value="BBA">BBA</option>  
+				<option value="B.Tech">B.Tech</option>  
+				<option value="MBA">MBA</option>  
+				<option value="MCA">MCA</option>  
+				<option value="M.Tech">M.Tech</option>  
+			</select>  
+			
+			<br>  
+			
+			<br>  
+			<label>   
+				Gender :  
+			</label> 
+			<input type="radio" name="gender" value="gender-male"/> Male   
+			<input type="radio" name="gender" value="gender-female"/> Female   
+			<br>  
+			
+			<br>
+			<label>
+				Hobby :
+			</label>
+			<input type="checkbox" name="Hobby" value="H1" checked>Readinig
+			<input type="checkbox" name="Hobby" value="H2" >Dancing
+			<input type="checkbox" name="Hobby" value="H3" >Singing
+			<br> 
+			<br>
+			
+			<label>   
+				Phone : + 
+			</label>  
+			<input type="text" name="country code"  value="91" size="2"/>   
+			<input type="text" name="phone" size="10" maxlength="10"/> <br> <br>  
+			Address :
+			<br>  
+			<textarea cols="40" rows="5" value="address">  
+			</textarea>  
+			<br> <br>  
+			Email:  
+			<input type="email" id="email" name="email"/> <br>    
+			<br>   
+			Password:  
+			<input type="Password" id="pass" name="pass"> <br>   
+			<br>   
+			Re-type password:  
+			<input type="Password" id="repass" name="repass"> <br> <br>  
+			<input type="Submit" value="Submit" form="registrationForm"/>  
+			<input type="Reset" value="Reset" form="registrationForm">
+		</form>  
+	</body>  
+</html>

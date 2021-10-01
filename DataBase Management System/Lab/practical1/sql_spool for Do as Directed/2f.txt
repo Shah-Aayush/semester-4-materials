@@ -1,0 +1,8 @@
+SQL> select name from client where name LIKE '_a%';
+
+NAME                                                                                                                                                                                                                                                                                                        
+--------------------                                                                                                                                                                                                                                                                                        
+Mamta Shah                                                                                                                                                                                                                                                                                                  
+Harsh Desai                                                                                                                                                                                                                                                                                                 
+
+SQL> spool off;

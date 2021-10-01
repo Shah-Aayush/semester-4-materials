@@ -1,0 +1,15 @@
+SQL> delete from client where state='Tamil Nadu';
+
+1 row deleted.
+
+SQL> select name,state from client;
+
+NAME                 STATE                                                                                                                                                                                                                                                                                  
+-------------------- ---------------                                                                                                                                                                                                                                                                        
+Ivan Bayross         Maharashtra                                                                                                                                                                                                                                                                            
+Chhaya Patel         Maharashtra                                                                                                                                                                                                                                                                            
+Ashni Joshi          Karnataka                                                                                                                                                                                                                                                                              
+Harsh Desai          Maharashtra                                                                                                                                                                                                                                                                            
+Deepak Sharma        Karnataka                                                                                                                                                                                                                                                                              
+
+SQL> spool off;

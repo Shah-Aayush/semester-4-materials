@@ -1,0 +1,11 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select first_name,salary,salary * 12 from employees where salary * 12  between 70000 and 90000
+SQL> /
+
+FIRST_NAME               SALARY  SALARY*12                                                                                                                                                                                                                                                                  
+-------------------- ---------- ----------                                                                                                                                                                                                                                                                  
+Bruce                      6000      72000                                                                                                                                                                                                                                                                  
+
+SQL> spool off;

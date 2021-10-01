@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- ico -->
+    <link rel="icon" href="./images/moodle-logo.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="style6.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./upcomingEvents.js"></script>
+    <script src="./counter.js"></script>
+    <script>
+        function submitted() {
+            document.getElementById('submission-status').textContent = 'Submitted for grading';
+            console.log(document.getElementById('time-status').value);
+            document.getElementById('time-status').textContent = 'Submitted ' + Math.floor(angular.element(document.querySelector('[ng-controller="CounterController"]')).scope().hour) + " Hours " + Math.floor(angular.element(document.querySelector('[ng-controller="CounterController"]')).scope().minute) + " Minutes " + angular.element(document.querySelector('[ng-controller="CounterController"]')).scope().counter % 60 + " seconds early";
+            console.log("Hello");
+        }
+
+        var mainApp = angular
+            .module('CounterApp', [])
+            .controller('CounterController', function ($scope, $timeout) {
+                var timer;
+                $scope.counter = 36000;
+                $scope.showoff = 00;
+                $scope.hour = 0;
+                $scope.minute = 0;
+                $scope.stopCounter = function () {
+                    submitted();
+                    $timeout.cancel(timer);
+                    timer = null;
+                };
+                $scope.startCounter = function () {
+                    if (timer === null) {
+                        updateCounter();
+                    }
+                };
+                var updateCounter = function () {
+                    if ($scope.counter == 0) {
+                        document.getElementById('time-status').textContent = 'Late Submission';
+                        document.getElementById('time-status').style.color = "red";
+                        document.getElementById('upload-btn').disabled = true;
+                    }
+                    $scope.counter--;
+                    $scope.hour = $scope.counter / 3600;
+                    $scope.minute = $scope.counter % 3600 / 60;
+                    timer = $timeout(updateCounter, 1000);
+                };
+                updateCounter();
+
+            });
+        mainApp.filter('floor', function () {
+            return function (input) {
+                return Math.floor(input);
+            };
+        });
+    </script>
+    <script>
+        window.addEventListener('load', () => {
+            const choice = sessionStorage.getItem('Choice');
+            if (choice == '1') {
+                const name = sessionStorage.getItem('Name')[0].toUpperCase() + sessionStorage.getItem('Name').slice(1);
+                const email = sessionStorage.getItem('Email');
+                const password = sessionStorage.getItem('Password');
+                document.getElementById('account_name_content').textContent = name;
+                document.getElementById('logged_in').textContent = 'You are logged in as : ';
+                document.getElementById('logged_in_name').textContent = name + ' | ' + email.split('@')[0];
+                mainName = name;
+            }
+            else if (choice == '2') {
+                const email = sessionStorage.getItem('Email');
+                const password = sessionStorage.getItem('Password');
+                const name = email.split("@")[0][0].toUpperCase() + email.split("@")[0].slice(1);
+                document.getElementById('account_name_content').innerHTML = name;
+                document.getElementById('logged_in').textContent = 'You are logged in as : ';
+                document.getElementById('logged_in_name').textContent = ' ' + email.split('@')[0];
+                mainName = name;
+            }
+            mainChoice = choice;
+        })
+    </script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        .colortext {
+            color: #c3073f;
+        }
+
+        .colortext2 {
+            color: #c3073f;
+        }
+
+        .removelink {
+            text-decoration: underline;
+            color: white;
+        }
+
+        .removelink2 {
+            text-align: none;
+            color: rgb(49, 49, 255);
+        }
+    </style>
+</head>
+
+<body ng-app="CounterApp" ng-controller="CounterController">
+    <section class="header">
+        <nav>
+            <a href="https://nirmauni.ac.in/" class="logo">
+                <img src="./images/volti1.png">
+            </a>
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a class="" href="#courses">Courses</a></li>
+                <li><a class="" href="#aboutlast">About</a></li>
+                <li><a class="" href="#events">Events</a></li>
+                <li>
+                    <a class="" href="#Account" id="account_name" onclick="logout_option()"
+                        style="background-color: #c3073f;border-radius: 20px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill:rgb(255, 255, 255);margin-top: 7px;margin-right: 10px;">
+                            <path
+                                d="M12,2C6.579,2,2,6.579,2,12s4.579,10,10,10s10-4.579,10-10S17.421,2,12,2z M12,7c1.727,0,3,1.272,3,3s-1.273,3-3,3 c-1.726,0-3-1.272-3-3S10.274,7,12,7z M6.894,16.772c0.897-1.32,2.393-2.2,4.106-2.2h2c1.714,0,3.209,0.88,4.106,2.2 C15.828,18.14,14.015,19,12,19S8.172,18.14,6.894,16.772z">
+                            </path>
+                        </svg>
+                        <p id="account_name_content" style="display: inline; color: aqua; margin: 0px; ">Account
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <section class="top-name">
+        <div class="top-container">
+            <div class="text-top">
+                <h1>Practical - 10</h1>
+                <br>
+                <div class="text-question">
+                    Develop a project using various web technologies learned in this course
+                </div>
+                <div>
+                    Upload a single pdf file with name as : RollNo_Practical999
+                </div>
+            </div>
+        </div>
+        <div class="top-table">
+            <h2>Submission Type</h2>
+            <table>
+                <tr>
+                    <td style="font-weight: 700;">Attempt Number</td>
+                    <td style="font-weight: 400;" id="attempt-status">This is attempt 1 ( Only allowed 2 )</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 700;">Submission status</td>
+                    <td style="font-weight: 400;" id="submission-status">No attempt</td>
+<!--                    shivam panchal-->
+<!--                    shivam panchal-->
+                </tr>
+                <tr>
+                    <td style="font-weight: 700;">Grading Status</td>
+                    <td style="font-weight: 400;" id="Grading-status">Not Graded</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 700;">Due Date</td>
+                    <td style="font-weight: 400;" id="date-status"> 30th April 2021</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 700;">Time Remaining</td>
+                    <td style="font-weight: 400;" id="time-status">{{hour | number:2 | floor }} Hours {{minute |
+                        number:2 | floor}} Minutes {{counter%60}} Seconds
+                    </td>
+                </tr>
+            </table>
+            <div class="top-input">
+                <label class="custom-file-upload">
+                    <input type="file" ng-click="stopCounter()" id="upload-btn" />
+                    Upload
+                </label>
+            </div>
+        </div>
+    </section>
+    <footer style="color: white; background-color: #1a1a1d; padding: 20px;">
+        <p style="display: inline-block;color: white;" id="logged_in">You are not logged in.</p><a class="removelink"
+            href="./f1.html" id="logged_in_name"></a>
+        <br>
+        For support contact :<a href="https://nirmauni.ac.in/" style="color: white;">Nirma</a>
+        <br>
+        <a href="#top" style="color: white;">Home</a>
+        <br>
+        <a href="https://download.moodle.org/mobile?version=2019111803.02&lang=en&iosappid=633359593&androidappid=com.moodle.moodlemobile"
+            style="color: white;">Get the App</a>
+        
+<!--shivam panchal-->
+<!--shivam panchal-->
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+SQL> select salary+commission_pct "Total Salary" from employees;
+
+Total Salary                                                                                                                                                                                                                                                                                                
+------------                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                            
+       17000                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+        6000                                                                                                                                                                                                                                                                                                
+        4800                                                                                                                                                                                                                                                                                                
+        4800                                                                                                                                                                                                                                                                                                
+       11000                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+
+10 rows selected.
+
+SQL> spool off;
