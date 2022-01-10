@@ -1,2 +1,3 @@
-# semester-4-practicals
-All subjects' material of semester 4 {Computer Science and Engineering - ITNU} is here !
+# semester-4-materials
+All subjects' material of semester 6 is here ! 
+> Courses from Computer Science and Engineering - Institute of Technology, Nirma University.
